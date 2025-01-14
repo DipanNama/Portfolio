@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipan Nama | Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
+    <div
+        class="absolute h-full w-full z-[-2] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
+    </div>
+    <main id="main" class="">
+
+        <div id="preloader" class="flex justify-center flex-col items-center h-[100vh] w-[100vw] absolute top-0 left-0 z-50">
+            <div class="bg-red-500 flex-1"></div>
+            <div class="bg-green-500 flex-1"></div>
+        </div>
+
+        <div id="page" class="">
+            <div id="nav" class="w-full fixed flex justify-between items-center p-4 px-[8vw] text-white bg-black">
+                <img src="./assets/logo.png" alt="logo" class="logo w-48 invert aspect-auto sm:w-64 ">
+                <i id="toggle-sidebar-open" class="ri-menu-2-line font-bold text-2xl text-[#f3f7e0] sm:hidden"></i>
+                <a href="./assets/resume.pdf" download="Dipan Nama Resume"
+                    class="resume-btn font-medium py-3 px-5 p-2 hidden sm:block text-center text-[#f3f7e0] bg-zinc-900  rounded-full tracking-wide">Download
+                    Resume
+                    <i class="ri-arrow-right-line text-xl"></i>
+                </a>
+            </div>
+
+            <div id="sidebar" class="w-full fixed px-[8vw] h-full bg-black text-[#f3f7e0] py-3 sm:hidden hidden">
+                <div class="flex justify-between items-center">
+                    <img src="./assets/logo.png" alt="logo" class="logo w-48 invert aspect-auto">
+                    <i id="toggle-sidebar-close"
+                        class="ri-close-line font-medium text-4xl text-[#f3f7e0] sm:hidden"></i>
+                </div>
+
+                <hr class="mt-5 border-t-2 border-gray-500">
+
+                <ul
+                    class="mt-12 flex justify-center text-[#f3f7e0] items-center flex-col font-medium text-lg gap-4 uppercase tracking-wide">
+                    <li class="py-2 w-full flex justify-center rounded-md">Home</li>
+                    <li class="py-2 ">About</li>
+                    <li class="py-2 ">About</li>
+                    <li class="py-2">Services</li>
+                    <li class="py-2">Portfolio</li>
+                    <li class="py-2">Contact</li>
+                </ul>
+
+                <div class="resume flex justify-center mt-10  items-center">
+                    <a href="./assets/resume.pdf" download="Dipan Nama Resume"
+                        class="resume-btn w-full font-medium py-5 mt-5 text-center text-[#f3f7e0] bg-zinc-900 screen-x-10 rounded-md tracking-wide">Download
+                        Resume</a>
+                </div>
+
+
+                <footer class="absolute bottom-0 w-full p-5  sm:hidden">
+                    <div class="flex justify-center gap-5 items-center text-4xl">
+                        <i class="ri-github-fill"></i>
+                        <i class="ri-twitter-fill"></i>
+                        <i class="ri-linkedin-fill"></i>
+                    </div>
+                </footer>
+            </div>
+
+            <div id="home" class="h-full">
+                <div class="flex flex-col justify-center items-center h-screen">
+                    <div class="text-center">
+                        <h1 class="text-[3em] sm:text-[5em] font-bold text-[#8b5cf6]">Dipan Nama</h1>
+                        <p class="text-lg">Web Developer</p>
+                    </div>
+                    <div class="flex z-[-1] justify-center items-center mt-10">
+                        <a href="#page1"
+                            class="scroll-btn animate-bounce text-[#8b5cf6] border border-[#8b5cf6] rounded-full h-fit w-fit">
+                            <i class="ri-arrow-down-line text-4xl"></i>
+                        </a>
+                    </div>
+
+                    <div id="code-snippet"
+                        class="dark absolute top-[20%]  z-[-1] right-[10%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white">
+                        <div class="header h-[30px] flex justify-start items-center gap-2">
+                            <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
+                            <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
+                            <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
+                        </div>
+                        <div class="py-2 font-bold">
+                            <p class="text-sm">
+                                <span class="text-green-400">const</span>
+                                <span class="text-purple-400">name</span>
+                                <span class="text-blue-400">=</span>
+                                <span class="text-yellow-400">"Dipan Nama"</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+                            <p class="text-sm">
+                                <span class="text-green-400">const</span>
+                                <span class="text-purple-400">profession</span>
+                                <span class="text-blue-400">=</span>
+                                <span class="text-yellow-400">"Web Developer"</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+                            <p class="text-sm">
+                                <span class="text-green-400">console.log</span>
+                                <span class="text-blue-400">(</span>
+                                <span class="text-yellow-400">"Hello World"</span>
+                                <span class="text-blue-400">)</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+                            <p class="text-sm">
+                                <span class="text-green-400">const</span>
+                                <span class="text-purple-400">greet</span>
+                                <span class="text-blue-400">=</span>
+                                <span class="text-blue-400">(</span>
+                                <span class="text-purple-400">name</span>
+                                <span class="text-blue-400">)</span>
+                                <span class="text-blue-400">=></span>
+                                <span class="text-blue-400">{</span>
+                                <br>
+                                <span class="text-green-400 pl-4">console.log</span>
+                                <span class="text-blue-400">(</span>
+                                <span class="text-yellow-400">`Hello, </span>
+                                <span class="text-teal-400">${</span>
+                                <span class="text-purple-400">name</span>
+                                <span class="text-teal-400">}</span>
+                                <span class="text-yellow-400">!`</span>
+                                <span class="text-blue-400">)</span>
+                                <br>
+                                <span class="text-blue-400">}</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+
+
+                        </div>
+                    </div>
+
+                    <div id="code-snippet"
+                        class="dark absolute top-[35%] z-[-2] bg-zinc-800 right-[5%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white">
+                        <div class="header h-[30px] flex justify-start items-center gap-2">
+                            <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
+                            <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
+                            <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
+                        </div>
+                        <div class="py-2 font-bold">
+                            <p class="text-sm">
+                                <span class="text-green-400">const</span>
+                                <span class="text-purple-400">name</span>
+                                <span class="text-blue-400">=</span>
+                                <span class="text-yellow-400">"Dipan Nama"</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+                            <p class="text-sm">
+                                <span class="text-green-400">const</span>
+                                <span class="text-purple-400">profession</span>
+                                <span class="text-blue-400">=</span>
+                                <span class="text-yellow-400">"Web Developer"</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+                            <p class="text-sm">
+                                <span class="text-green-400">console.log</span>
+                                <span class="text-blue-400">(</span>
+                                <span class="text-yellow-400">"Hello World"</span>
+                                <span class="text-blue-400">)</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+                            <p class="text-sm">
+                                <span class="text-green-400">const</span>
+                                <span class="text-purple-400">greet</span>
+                                <span class="text-blue-400">=</span>
+                                <span class="text-blue-400">(</span>
+                                <span class="text-purple-400">name</span>
+                                <span class="text-blue-400">)</span>
+                                <span class="text-blue-400">=></span>
+                                <span class="text-blue-400">{</span>
+                                <br>
+                                <span class="text-green-400 pl-4">console.log</span>
+                                <span class="text-blue-400">(</span>
+                                <span class="text-yellow-400">`Hello, </span>
+                                <span class="text-teal-400">${</span>
+                                <span class="text-purple-400">name</span>
+                                <span class="text-teal-400">}</span>
+                                <span class="text-yellow-400">!`</span>
+                                <span class="text-blue-400">)</span>
+                                <br>
+                                <span class="text-blue-400">}</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+
+
+                        </div>
+                    </div>
+
+                    <div id="code-snippet"
+                        class="dark absolute top-[55%] z-[-2] bg-zinc-900 right-[15%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white">
+                        <div class="header h-[30px] flex justify-start items-center gap-2">
+                            <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
+                            <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
+                            <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
+                        </div>
+                        <div class="py-2 font-bold">
+                            <p class="text-sm">
+                                <span class="text-green-400">const</span>
+                                <span class="text-purple-400">name</span>
+                                <span class="text-blue-400">=</span>
+                                <span class="text-yellow-400">"Dipan Nama"</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+                            <p class="text-sm">
+                                <span class="text-green-400">const</span>
+                                <span class="text-purple-400">profession</span>
+                                <span class="text-blue-400">=</span>
+                                <span class="text-yellow-400">"Web Developer"</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+                            <p class="text-sm">
+                                <span class="text-green-400">console.log</span>
+                                <span class="text-blue-400">(</span>
+                                <span class="text-yellow-400">"Hello World"</span>
+                                <span class="text-blue-400">)</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+                            <p class="text-sm">
+                                <span class="text-green-400">const</span>
+                                <span class="text-purple-400">greet</span>
+                                <span class="text-blue-400">=</span>
+                                <span class="text-blue-400">(</span>
+                                <span class="text-purple-400">name</span>
+                                <span class="text-blue-400">)</span>
+                                <span class="text-blue-400">=></span>
+                                <span class="text-blue-400">{</span>
+                                <br>
+                                <span class="text-green-400 pl-4">console.log</span>
+                                <span class="text-blue-400">(</span>
+                                <span class="text-yellow-400">`Hello, </span>
+                                <span class="text-teal-400">${</span>
+                                <span class="text-purple-400">name</span>
+                                <span class="text-teal-400">}</span>
+                                <span class="text-yellow-400">!`</span>
+                                <span class="text-blue-400">)</span>
+                                <br>
+                                <span class="text-blue-400">}</span>
+                                <span class="text-blue-400">;</span>
+                            </p>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div id="page1" class="light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat vitae
+                accusamus soluta at
+                officiis odio nesciunt! Ipsum officia exercitationem soluta aliquid eos ex qui, voluptatibus magnam est
+                totam eligendi itaque? Voluptate qui reiciendis incidunt architecto amet, cupiditate rem suscipit et,
+                eum
+                beatae eos sunt omnis ipsam hic quidem obcaecati praesentium.
+            </div>
+
+            <div id="page2" class="light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut repudiandae
+                temporibus, ad tempora
+                ratione cumque sapiente quos eligendi ex ut nemo, aliquam, enim aliquid! Suscipit laborum quae ratione
+                deserunt, quo dolorum dolor, est commodi perspiciatis ipsam possimus error nam repellendus voluptatibus!
+                Nam
+                quas, aspernatur quo molestiae odit quibusdam odio perspiciatis ad corporis in ducimus sed eos veniam a
+                accusamus. Ipsum?</div>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
