@@ -30,6 +30,8 @@ html,body{
 }
 
 
+
+
 @layer utilities {
     .content-auto {
       content-visibility: auto;
@@ -42,4 +44,112 @@ html,body{
         background-color: white;
         color: black;
     }
+}
+
+#msg-block1{
+    animation: updown1 7s infinite;
+}
+
+#msg-block2{
+    animation: updown2 9s infinite;
+}
+
+
+#msg-block3{
+    animation: updown3 8s infinite;
+}
+
+
+#msg-block4{
+    animation: updown4 9s infinite;
+}
+
+@keyframes updown1 {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateX(-40px);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateX(50px);
+    }
+    80% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    
+}
+
+
+@keyframes updown2 {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateX(-40px);
+    }
+    40% {
+        transform: translateY(50px);
+    }
+    60% {
+        transform: translateX(-30px);
+    }
+    80% {
+        transform: translateY(40px);
+    }
+    100% {
+        transform: translateX(0);
+    } 
+}
+
+
+@keyframes updown3 {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateX(-50px);
+    }
+    40% {
+        transform: translateY(30px);
+    }
+    60% {
+        transform: translateX(40px);
+    }
+    80% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    
+}
+
+
+@keyframes updown4 {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateX(50px);
+    }
+    40% {
+        transform: translateY(-40px);
+    }
+    60% {
+        transform: translateX(-30px);
+    }
+    80% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    
 }

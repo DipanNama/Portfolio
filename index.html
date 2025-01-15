@@ -14,28 +14,28 @@
 
 <body>
     <!-- <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
-    <div
-        class="absolute h-full w-full z-[-2] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
-    </div>
-    <main id="main" class="">
+    <!-- <div class="absolute h-full w-full z-[-2] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div> -->
+    <main id="main" class="overflow-x-hidden z-[-5]">
 
-        <div id="preloader" class="flex justify-center flex-col items-center h-[100vh] w-[100vw] absolute top-0 left-0 z-50">
+        <!-- <div id="preloader" class="flex justify-center flex-col items-center h-[100vh] w-[100vw] absolute top-0 left-0 z-50">
             <div class="bg-red-500 flex-1"></div>
             <div class="bg-green-500 flex-1"></div>
-        </div>
+        </div> -->
 
-        <div id="page" class="">
-            <div id="nav" class="w-full fixed flex justify-between items-center p-4 px-[8vw] text-white bg-black">
-                <img src="./assets/logo.png" alt="logo" class="logo w-48 invert aspect-auto sm:w-64 ">
-                <i id="toggle-sidebar-open" class="ri-menu-2-line font-bold text-2xl text-[#f3f7e0] sm:hidden"></i>
+        <div id="page" class="bg-black">
+            <!-- Full screen navigation -->
+            <div id="nav" class="w-full flex justify-between items-center p-4 px-[8vw]">
+                <img src="./assets/logo.png" alt="logo" class="logo w-48 invert aspect-auto z-[2] sm:w-64">
+                <i id="toggle-sidebar-open" class="ri-menu-2-line font-bold text-2xl z-[2] text-[#f3f7e0] sm:hidden"></i>
                 <a href="./assets/resume.pdf" download="Dipan Nama Resume"
-                    class="resume-btn font-medium py-3 px-5 p-2 hidden sm:block text-center text-[#f3f7e0] bg-zinc-900  rounded-full tracking-wide">Download
+                    class="resume-btn font-medium py-3 px-5 p-2 hidden sm:block text-center text-[#f3f7e0] z-[10] bg-zinc-900  rounded-full tracking-wide">Download
                     Resume
                     <i class="ri-arrow-right-line text-xl"></i>
                 </a>
             </div>
 
-            <div id="sidebar" class="w-full fixed px-[8vw] h-full bg-black text-[#f3f7e0] py-3 sm:hidden hidden">
+            <!-- Small screen sidebar -->
+            <div id="sidebar" class="w-full z-[10] fixed px-[8vw] h-full bg-black text-[#f3f7e0] py-3 sm:hidden hidden">
                 <div class="flex justify-between items-center">
                     <img src="./assets/logo.png" alt="logo" class="logo w-48 invert aspect-auto">
                     <i id="toggle-sidebar-close"
@@ -61,30 +61,102 @@
                 </div>
 
 
-                <footer class="absolute bottom-0 w-full p-5  sm:hidden">
+                <footer class="absolute bottom-0 w-full p-5 flex justify-center items-center overflow-x-hidden sm:hidden">
                     <div class="flex justify-center gap-5 items-center text-4xl">
                         <i class="ri-github-fill"></i>
-                        <i class="ri-twitter-fill"></i>
+                        <i class="ri-twitter-x-line"></i>
                         <i class="ri-linkedin-fill"></i>
                     </div>
                 </footer>
             </div>
 
+            <!-- Hero section Main content -->
             <div id="home" class="h-full">
                 <div class="flex flex-col justify-center items-center h-screen">
-                    <div class="text-center">
-                        <h1 class="text-[3em] sm:text-[5em] font-bold text-[#8b5cf6]">Dipan Nama</h1>
-                        <p class="text-lg">Web Developer</p>
+                    <div class="text-center flex items-center flex-col z-[2]">
+                        <h1 class="text-[3em] sm:text-[5em] font-bold text-[#14ae96]">Dipan Nama</h1>
+                        <p>
+                            <!-- <span class="text-[#8b5cf6]">I'm A passionate frontend developer, programmer, CTF player & student from India. </span> -->
+                            <span class="text-[1.5em] text-white">A passionate <span
+                                    class="text-[#14ae96] font-bold">frontend</span> developer, programmer,
+                                <span class="text-[#14ae96] font-bold">CTF</span> player &
+                                student from India. </span>
+                        </p>
+
+                        <!-- Home screen social icons -->
+                        <div class="flex justify-center items-center gap-2">
+                            <p
+                                class="text-lg border w-fit border-zinc-700 rounded-full px-5 py-2 mt-5 font-medium pointer-events-auto transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white before:content-['>'] before:mr-2 before:text-[#14ae96] before:text-2xl before:font-bold before:transition-all before:duration-1000 before:hover:text-[#14ae96]">
+                                Web Developer
+                            </p>
+                            <a href="https://www.github.com/DipanNama" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-[#14ae96] text-lg border w-fit border-zinc-700 rounded-full px-3 py-2 mt-5 font-medium font-bold transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/dipannama" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-[#14ae96] text-lg border w-fit border-zinc-700 rounded-full px-3 py-2 mt-5 font-medium font-bold transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="https://www.x.com/dipannama91" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-[#14ae96] text-lg border w-fit border-zinc-700 rounded-full px-3 py-2 mt-5 font-medium font-bold transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white">
+                                <i class="ri-twitter-x-line"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="flex z-[-1] justify-center items-center mt-10">
-                        <a href="#page1"
-                            class="scroll-btn animate-bounce text-[#8b5cf6] border border-[#8b5cf6] rounded-full h-fit w-fit">
-                            <i class="ri-arrow-down-line text-4xl"></i>
+                    <div class="flex justify-center items-center absolute bottom-0">
+                        <a href="#page1" class="scroll-btn animate-bounce text-[#8b5cf6] h-fit w-fit">
+                            <i class="ri-arrow-down-s-line text-4xl"></i>
                         </a>
                     </div>
 
-                    <div id="code-snippet"
-                        class="dark absolute top-[20%]  z-[-1] right-[10%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white">
+                    <!-- Background blur effect -->
+                    <div class="">
+                        <div
+                            class="h-[500px] w-[500px] bg-[#113e41] blur-[100px] absolute top-[-20%] left-[-5%] rounded-full">
+                        </div>
+                        <div
+                            class="h-[600px] w-[600px] bg-[#113e41] blur-[100px] absolute top-[50%] right-0 translate-x-[50%] translate-y-[-50%] rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Message Blocks -->
+                    <div id="msg-block1"
+                        class=" hidden sm:inline-flex sm:w-[320px]  sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[20%] left-[30%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
+                        <div class="p-5 flex-1">
+                            <div class="h-5 w-42 bg-white/20 rounded-xl"></div>
+                        </div>
+                        <div class="bg-blue-500 h-5 w-16 rounded-xl"></div>
+                    </div>
+
+
+                    <div id="msg-block2"
+                        class=" hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[30%] right-[5%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
+                        <div class="p-5 flex-1">
+                            <div class="h-5 w-48 bg-white/20 rounded-xl"></div>
+                        </div>
+                        <div class="bg-red-500 h-5 w-16 rounded-xl"></div>
+                    </div>
+
+
+                    <div id="msg-block3"
+                        class=" hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[75%] left-[10%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
+                        <div class="p-5 flex-1">
+                            <div class="h-5 w-44 bg-white/20 rounded-xl"></div>
+                        </div>
+                        <div class="bg-orange-500 h-5 w-20 rounded-xl"></div>
+                    </div>
+
+                    <div id="msg-block4"
+                        class=" hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[85%] right-[15%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
+                        <div class="p-5 flex-1">
+                            <div class="h-5 w-40 bg-white/20 rounded-xl"></div>
+                        </div>
+                        <div class="bg-green-500 h-5 w-20 rounded-xl"></div>
+                    </div>
+
+
+                    <!-- <div id="code-snippet"
+                        class="dark absolute top-[20%]  z-[-1] right-[10%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white ">
                         <div class="header h-[30px] flex justify-start items-center gap-2">
                             <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
                             <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
@@ -137,9 +209,9 @@
 
 
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div id="code-snippet"
+                    <!-- <div id="code-snippet"
                         class="dark absolute top-[35%] z-[-2] bg-zinc-800 right-[5%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white">
                         <div class="header h-[30px] flex justify-start items-center gap-2">
                             <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
@@ -249,28 +321,17 @@
 
 
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
 
+        </div>
 
-
-            <div id="page1" class="light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat vitae
-                accusamus soluta at
-                officiis odio nesciunt! Ipsum officia exercitationem soluta aliquid eos ex qui, voluptatibus magnam est
-                totam eligendi itaque? Voluptate qui reiciendis incidunt architecto amet, cupiditate rem suscipit et,
-                eum
-                beatae eos sunt omnis ipsam hic quidem obcaecati praesentium.
-            </div>
-
-            <div id="page2" class="light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut repudiandae
-                temporibus, ad tempora
-                ratione cumque sapiente quos eligendi ex ut nemo, aliquam, enim aliquid! Suscipit laborum quae ratione
-                deserunt, quo dolorum dolor, est commodi perspiciatis ipsam possimus error nam repellendus voluptatibus!
-                Nam
-                quas, aspernatur quo molestiae odit quibusdam odio perspiciatis ad corporis in ducimus sed eos veniam a
-                accusamus. Ipsum?</div>
+        <div id="page1" class="view dark">
+        </div>
+        <div class="view dark" id="page2">
+        </div>
     </main>
     <script src="./js/script.js"></script>
 </body>
