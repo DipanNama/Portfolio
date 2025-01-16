@@ -32,11 +32,11 @@ const navLinks = document.querySelectorAll('.nav-link');
 function setActiveLink() {
   navLinks.forEach(link => {
     // Remove active styles from all links
-    link.classList.remove('bg-zinc-600', 'font-bold', 'border-zinc-600');
+    link.classList.remove('bg-zinc-700', 'font-bold', 'border-zinc-600');
 
     // Add active styles to the current link
     if (link.getAttribute('href') === window.location.hash) {
-      link.classList.add('bg-zinc-600', 'font-bold', 'border-zinc-600');
+      link.classList.add('bg-zinc-700', 'font-bold', 'border-zinc-600');
     }
   });
 }

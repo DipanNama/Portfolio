@@ -10,6 +10,15 @@ body {
     width: 100%;
     z-index: 0;
     scroll-behavior: smooth;
+    cursor: url('cursor.png'), auto;
+}
+
+a{
+    cursor: url('tap.png'), pointer;
+}
+
+.container{
+    margin: 0 10vw;
 }
 
 
@@ -18,21 +27,41 @@ body {
     height: 100vh;
 }
 
-
-
-#page1 {
-    height: 100vh;
+#about {
+    height: 60vh;
     width: 100vw;
     /* background-color: indigo; */
 }
 
-#page2 {
+#technologies {
     height: 100vh;
     width: 100vw;
     /* background-color: orangered; */
 }
 
+#projects {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: orangered; */
+}
 
+#experience {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: orangered; */
+}
+
+#services {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: orangered; */
+}
+
+#contact {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: orangered; */
+}
 
 
 @layer utilities {
@@ -177,4 +206,191 @@ body {
         transform: translateX(0);
     }
 
+}
+
+/* .page-loading{
+    animation: page-loader 5s forwards ;
+}
+
+@keyframes page-loader {
+    0% {
+        position: absolute;
+        display: block;
+        background-color: red;
+    }
+    100% {
+        display: none;
+    }
+} */
+
+
+/* Ensure the parent container has a relative position for positioning the pseudo-element */
+.nav-link {
+    position: relative;
+}
+
+/* Style the ::before pseudo-element */
+#home-link:hover::before {
+    content: 'Home';
+    position: absolute;
+    top: 100%; /* Place it below the parent element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c2c2c; /* Background color for the tooltip */
+    color: #f3f7e0; /* Text color */
+    padding: 5px 10px; /* Padding for better appearance */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 0.75rem; /* Smaller font size */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+/* Show the content with animation on hover */
+#home-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(15px); /* Slightly move down */
+}
+
+
+#about-link:hover::before {
+    content: 'About';
+    position: absolute;
+    top: 100%; /* Place it below the parent element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c2c2c; /* Background color for the tooltip */
+    color: #f3f7e0; /* Text color */
+    padding: 5px 10px; /* Padding for better appearance */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 0.75rem; /* Smaller font size */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+/* Show the content with animation on hover */
+#about-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(15px); /* Slightly move down */
+}
+
+#technologies-link:hover::before {
+    content: 'Tools';
+    position: absolute;
+    top: 100%; /* Place it below the parent element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c2c2c; /* Background color for the tooltip */
+    color: #f3f7e0; /* Text color */
+    padding: 5px 10px; /* Padding for better appearance */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 0.75rem; /* Smaller font size */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+/* Show the content with animation on hover */
+#technologies-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(15px); /* Slightly move down */
+}
+
+
+
+#projects-link:hover::before {
+    content: 'projects';
+    position: absolute;
+    top: 100%; /* Place it below the parent element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c2c2c; /* Background color for the tooltip */
+    color: #f3f7e0; /* Text color */
+    padding: 5px 10px; /* Padding for better appearance */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 0.75rem; /* Smaller font size */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+/* Show the content with animation on hover */
+#projects-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(15px); /* Slightly move down */
+}
+
+
+#experience-link:hover::before {
+    content: 'experience';
+    position: absolute;
+    top: 100%; /* Place it below the parent element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c2c2c; /* Background color for the tooltip */
+    color: #f3f7e0; /* Text color */
+    padding: 5px 10px; /* Padding for better appearance */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 0.75rem; /* Smaller font size */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+/* Show the content with animation on hover */
+#experience-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(15px); /* Slightly move down */
+}
+
+#services-link:hover::before {
+    content: 'services';
+    position: absolute;
+    top: 100%; /* Place it below the parent element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c2c2c; /* Background color for the tooltip */
+    color: #f3f7e0; /* Text color */
+    padding: 5px 10px; /* Padding for better appearance */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 0.75rem; /* Smaller font size */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+/* Show the content with animation on hover */
+#services-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(15px); /* Slightly move down */
+}
+
+#contact-link:hover::before {
+    content: 'contact';
+    position: absolute;
+    top: 100%; /* Place it below the parent element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c2c2c; /* Background color for the tooltip */
+    color: #f3f7e0; /* Text color */
+    padding: 5px 10px; /* Padding for better appearance */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 0.75rem; /* Smaller font size */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+/* Show the content with animation on hover */
+#contact-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(15px); /* Slightly move down */
 }

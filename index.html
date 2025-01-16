@@ -13,39 +13,61 @@
 </head>
 
 <body>
-    <!-- <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
-    <!-- <div class="absolute h-full w-full z-[-2] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div> -->
     <main id="main" class="overflow-x-hidden z-[-5]">
 
-        <!-- <div id="preloader" class="flex justify-center flex-col items-center h-[100vh] w-[100vw] absolute top-0 left-0 z-50">
-            <div class="bg-red-500 flex-1"></div>
-            <div class="bg-green-500 flex-1"></div>
-        </div> -->
+        <!-- <div class="page-loading bg-red-500 z-[5] h-screen w-screen hidden"></div> -->
 
         <div id="home" class="bg-black">
             <!-- Full screen navigation -->
             <div id="nav" class="w-full flex justify-between items-center p-4 px-[8vw]">
                 <img src="./assets/logo.png" alt="logo" class="logo w-48 invert aspect-auto z-[2] sm:w-64">
 
-                <div class="text-white font-medium uppercase text-sm border border-zinc-700 gap-5 hidden sm:flex bg-white/10 z-50 py-2 px-5 p-2 rounded-full backdrop-blur-3xl fixed top-[2%] left-[50%] translate-x-[-50%]">
-                    <a href="#home" id="home-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">Home</a>
-                    <a href="#about" id="about-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">About</a>
-                    <a href="#services" id="services-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">Services</a>
-                    <a href="#portfolio" id="portfolio-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">Portfolio</a>
-                    <a href="#contact" id="contact-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">Contact</a>
-                  </div>
-                  
+                <!-- Navbar links -->
+                <div
+                    class="text-white z-[4] font-medium uppercase text-sm border border-zinc-700 gap-5 hidden sm:flex bg-white/10 z-50 py-2 px-5 p-2 rounded-full backdrop-blur-3xl fixed top-[2%] left-[50%] translate-x-[-50%]">
+                    <a href="#home" id="home-link"
+                        class="nav-link border rounded-full h-10 w-10 flex justify-center items-center p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300 relative">
+                        <i class="ri-home-6-line text-2xl"></i>
+                    </a>
+                    <a href="#about" id="about-link"
+                        class="nav-link border rounded-full h-10 w-10 flex justify-center items-center p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300 relative">
+                        <i class="ri-info-card-fill text-2xl"></i>
+                    </a>
+                    <a href="#technologies" id="technologies-link"
+                        class="nav-link border rounded-full h-10 w-10 flex justify-center items-center p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300 relative">
+                        <i class="ri-tools-fill text-2xl"></i>
+                    </a>
+                    <a href="#projects" id="projects-link"
+                        class="nav-link border rounded-full h-10 w-10 flex justify-center items-center p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300 relative">
+                        <i class="ri-folder-3-line text-2xl"></i>
+                    </a>
+                    <a href="#experience" id="experience-link"
+                        class="nav-link border rounded-full h-10 w-10 flex justify-center items-center p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300 relative">
+                        <i class="ri-computer-line text-2xl"></i>
+                    </a>
+                    <a href="#services" id="services-link"
+                        class="nav-link border rounded-full h-10 w-10 flex justify-center items-center p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300 relative">
+                        <i class="ri-briefcase-3-fill text-2xl"></i>
+                    </a>
+                    <a href="#contact" id="contact-link"
+                        class="nav-link border rounded-full h-10 w-10 flex justify-center items-center p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300 relative">
+                        <i class="ri-mail-line text-2xl"></i>
+                    </a>
+                </div>
 
+                <!-- Navbar CTO button -->
                 <a href="./assets/resume.pdf" download="Dipan Nama Resume"
-                    class="resume-btn font-medium py-3 px-5 p-2 hidden sm:block text-center text-[#f3f7e0] z-[10] bg-zinc-900  rounded-full tracking-wide">Download
+                    class="resume-btn font-medium py-3 px-5 p-2 hidden sm:block text-center text-[#f3f7e0] z-[4] bg-zinc-900  rounded-full tracking-wide">Download
                     Resume
-                    <i class="ri-arrow-right-line text-xl"></i>
+                    <i class="ri-arrow-right-line text-2xl"></i>
                 </a>
-                <i id="toggle-sidebar-open" class="ri-menu-2-line font-bold text-2xl z-[2] text-[#f3f7e0] sm:hidden"></i>
+                <i id="toggle-sidebar-open"
+                    class="ri-menu-2-line font-bold text-2xl z-[2] text-[#f3f7e0] sm:hidden"></i>
             </div>
 
             <!-- Small screen sidebar -->
-            <div id="sidebar" class="w-full z-[10] fixed px-[8vw] h-full bg-black text-[#f3f7e0] py-3 sm:hidden hidden">
+            <div id="sidebar"
+                class="w-full z-[10] backdrop-blur-3xl fixed px-[8vw] h-full bg-white/10 text-[#f3f7e0] py-3 sm:hidden hidden">
                 <div class="flex justify-between items-center">
                     <img src="./assets/logo.png" alt="logo" class="logo w-48 invert aspect-auto">
                     <i id="toggle-sidebar-close"
@@ -56,12 +78,21 @@
 
                 <ul
                     class="mt-12 flex justify-center text-[#f3f7e0] items-center flex-col font-medium text-lg gap-4 uppercase tracking-wide">
-                    <li class="py-2 w-full flex justify-center rounded-md">Home</li>
-                    <li class="py-2 ">About</li>
-                    <li class="py-2 ">About</li>
-                    <li class="py-2">Services</li>
-                    <li class="py-2">Portfolio</li>
-                    <li class="py-2">Contact</li>
+                    <li class=" py-2 w-full flex justify-center rounded-md hover:bg-white hover:text-black font-bold">
+                        <a href="#home">Home</a>
+                    </li>
+                    <li class=" py-2 w-full flex justify-center rounded-md hover:bg-white hover:text-black font-bold">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class=" py-2 w-full flex justify-center rounded-md hover:bg-white hover:text-black font-bold">
+                        <a href="#services">Services</a>
+                    </li>
+                    <li class=" py-2 w-full flex justify-center rounded-md hover:bg-white hover:text-black font-bold">
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="py-2 w-full flex justify-center rounded-md hover:bg-white hover:text-black font-bold">
+                        <a href="#contact">Contact</a>
+                    </li>
                 </ul>
 
                 <div class="resume flex justify-center mt-10  items-center">
@@ -121,7 +152,7 @@
                     </div>
 
                     <!-- Background blur effect -->
-                    <div class="">
+                    <div class="z-[1]">
                         <div
                             class="h-[500px] w-[500px] bg-[#113e41] blur-[100px] absolute top-[-20%] left-[-5%] rounded-full">
                         </div>
@@ -131,222 +162,182 @@
                     </div>
 
                     <!-- Message Blocks -->
-                    <div id="msg-block1"
-                        class=" hidden sm:inline-flex sm:w-[320px]  sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[20%] left-[30%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
-                        <div class="p-5 flex-1">
-                            <div class="h-5 w-42 bg-white/20 rounded-xl"></div>
+                    <div class="z-[2]">
+                        <div id="msg-block1"
+                            class="msg-block hidden sm:inline-flex sm:w-[320px]  sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[20%] left-[30%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
+                            <div class="p-5 flex-1">
+                                <div class="h-5 w-42 bg-white/20 rounded-xl"></div>
+                            </div>
+                            <div class="bg-blue-500 h-5 w-16 rounded-xl"></div>
                         </div>
-                        <div class="bg-blue-500 h-5 w-16 rounded-xl"></div>
-                    </div>
 
 
-                    <div id="msg-block2"
-                        class=" hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[30%] right-[5%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
-                        <div class="p-5 flex-1">
-                            <div class="h-5 w-48 bg-white/20 rounded-xl"></div>
+                        <div id="msg-block2"
+                            class="msg-block hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[30%] right-[5%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
+                            <div class="p-5 flex-1">
+                                <div class="h-5 w-48 bg-white/20 rounded-xl"></div>
+                            </div>
+                            <div class="bg-red-500 h-5 w-16 rounded-xl"></div>
                         </div>
-                        <div class="bg-red-500 h-5 w-16 rounded-xl"></div>
-                    </div>
 
 
-                    <div id="msg-block3"
-                        class=" hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[75%] left-[10%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
-                        <div class="p-5 flex-1">
-                            <div class="h-5 w-44 bg-white/20 rounded-xl"></div>
+                        <div id="msg-block3"
+                            class="msg-block hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[75%] left-[10%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
+                            <div class="p-5 flex-1">
+                                <div class="h-5 w-44 bg-white/20 rounded-xl"></div>
+                            </div>
+                            <div class="bg-orange-500 h-5 w-20 rounded-xl"></div>
                         </div>
-                        <div class="bg-orange-500 h-5 w-20 rounded-xl"></div>
-                    </div>
 
-                    <div id="msg-block4"
-                        class=" hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[85%] right-[15%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
-                        <div class="p-5 flex-1">
-                            <div class="h-5 w-40 bg-white/20 rounded-xl"></div>
-                        </div>
-                        <div class="bg-green-500 h-5 w-20 rounded-xl"></div>
-                    </div>
-
-
-                    <!-- <div id="code-snippet"
-                        class="dark absolute top-[35%]  z-[5] left-[10%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white ">
-                        <div class="header h-[30px] flex justify-start items-center gap-2">
-                            <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
-                            <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
-                            <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
-                        </div>
-                        <div class="py-2 font-bold">
-                            <p class="text-sm">
-                                <span class="text-green-400">const</span>
-                                <span class="text-purple-400">name</span>
-                                <span class="text-blue-400">=</span>
-                                <span class="text-yellow-400">"Dipan Nama"</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-                            <p class="text-sm">
-                                <span class="text-green-400">const</span>
-                                <span class="text-purple-400">profession</span>
-                                <span class="text-blue-400">=</span>
-                                <span class="text-yellow-400">"Web Developer"</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-                            <p class="text-sm">
-                                <span class="text-green-400">console.log</span>
-                                <span class="text-blue-400">(</span>
-                                <span class="text-yellow-400">"Hello World"</span>
-                                <span class="text-blue-400">)</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-                            <p class="text-sm">
-                                <span class="text-green-400">const</span>
-                                <span class="text-purple-400">greet</span>
-                                <span class="text-blue-400">=</span>
-                                <span class="text-blue-400">(</span>
-                                <span class="text-purple-400">name</span>
-                                <span class="text-blue-400">)</span>
-                                <span class="text-blue-400">=></span>
-                                <span class="text-blue-400">{</span>
-                                <br>
-                                <span class="text-green-400 pl-4">console.log</span>
-                                <span class="text-blue-400">(</span>
-                                <span class="text-yellow-400">`Hello, </span>
-                                <span class="text-teal-400">${</span>
-                                <span class="text-purple-400">name</span>
-                                <span class="text-teal-400">}</span>
-                                <span class="text-yellow-400">!`</span>
-                                <span class="text-blue-400">)</span>
-                                <br>
-                                <span class="text-blue-400">}</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-
-
-                        </div>
-                    </div> -->
-
-                    <!-- <div id="code-snippet"
-                        class="dark absolute top-[35%] z-[-2] bg-zinc-800 right-[5%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white">
-                        <div class="header h-[30px] flex justify-start items-center gap-2">
-                            <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
-                            <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
-                            <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
-                        </div>
-                        <div class="py-2 font-bold">
-                            <p class="text-sm">
-                                <span class="text-green-400">const</span>
-                                <span class="text-purple-400">name</span>
-                                <span class="text-blue-400">=</span>
-                                <span class="text-yellow-400">"Dipan Nama"</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-                            <p class="text-sm">
-                                <span class="text-green-400">const</span>
-                                <span class="text-purple-400">profession</span>
-                                <span class="text-blue-400">=</span>
-                                <span class="text-yellow-400">"Web Developer"</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-                            <p class="text-sm">
-                                <span class="text-green-400">console.log</span>
-                                <span class="text-blue-400">(</span>
-                                <span class="text-yellow-400">"Hello World"</span>
-                                <span class="text-blue-400">)</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-                            <p class="text-sm">
-                                <span class="text-green-400">const</span>
-                                <span class="text-purple-400">greet</span>
-                                <span class="text-blue-400">=</span>
-                                <span class="text-blue-400">(</span>
-                                <span class="text-purple-400">name</span>
-                                <span class="text-blue-400">)</span>
-                                <span class="text-blue-400">=></span>
-                                <span class="text-blue-400">{</span>
-                                <br>
-                                <span class="text-green-400 pl-4">console.log</span>
-                                <span class="text-blue-400">(</span>
-                                <span class="text-yellow-400">`Hello, </span>
-                                <span class="text-teal-400">${</span>
-                                <span class="text-purple-400">name</span>
-                                <span class="text-teal-400">}</span>
-                                <span class="text-yellow-400">!`</span>
-                                <span class="text-blue-400">)</span>
-                                <br>
-                                <span class="text-blue-400">}</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-
-
+                        <div id="msg-block4"
+                            class="msg-block hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[85%] right-[15%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
+                            <div class="p-5 flex-1">
+                                <div class="h-5 w-40 bg-white/20 rounded-xl"></div>
+                            </div>
+                            <div class="bg-green-500 h-5 w-20 rounded-xl"></div>
                         </div>
                     </div>
-
-                    <div id="code-snippet"
-                        class="dark absolute top-[55%] z-[-2] bg-zinc-900 right-[15%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white">
-                        <div class="header h-[30px] flex justify-start items-center gap-2">
-                            <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
-                            <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
-                            <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
-                        </div>
-                        <div class="py-2 font-bold">
-                            <p class="text-sm">
-                                <span class="text-green-400">const</span>
-                                <span class="text-purple-400">name</span>
-                                <span class="text-blue-400">=</span>
-                                <span class="text-yellow-400">"Dipan Nama"</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-                            <p class="text-sm">
-                                <span class="text-green-400">const</span>
-                                <span class="text-purple-400">profession</span>
-                                <span class="text-blue-400">=</span>
-                                <span class="text-yellow-400">"Web Developer"</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-                            <p class="text-sm">
-                                <span class="text-green-400">console.log</span>
-                                <span class="text-blue-400">(</span>
-                                <span class="text-yellow-400">"Hello World"</span>
-                                <span class="text-blue-400">)</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-                            <p class="text-sm">
-                                <span class="text-green-400">const</span>
-                                <span class="text-purple-400">greet</span>
-                                <span class="text-blue-400">=</span>
-                                <span class="text-blue-400">(</span>
-                                <span class="text-purple-400">name</span>
-                                <span class="text-blue-400">)</span>
-                                <span class="text-blue-400">=></span>
-                                <span class="text-blue-400">{</span>
-                                <br>
-                                <span class="text-green-400 pl-4">console.log</span>
-                                <span class="text-blue-400">(</span>
-                                <span class="text-yellow-400">`Hello, </span>
-                                <span class="text-teal-400">${</span>
-                                <span class="text-purple-400">name</span>
-                                <span class="text-teal-400">}</span>
-                                <span class="text-yellow-400">!`</span>
-                                <span class="text-blue-400">)</span>
-                                <br>
-                                <span class="text-blue-400">}</span>
-                                <span class="text-blue-400">;</span>
-                            </p>
-
-
-                        </div>
-                    </div> -->
 
                 </div>
             </div>
 
         </div>
 
-        <div id="page1" class="dark">
-            <div id="about">
-                about
+        <!-- About Page -->
+        <div id="about" class="bg-black">
+            <div class="container text-white flex flex-col sm:flex-row gap-20 justify-between  items-center p-5">
+                <!-- About page code block -->
+                <div id="code-snippet"
+                    class="dark absolute   z-[5]   h-[40vh] hidden sm:block rounded-xl px-5 py-4 bg-black text-white left sm:flex-1 border border-zinc-800 rounded-2xl relative top-[10vh] justify-center items-center">
+                    <div class="header h-[30px] flex justify-start items-center gap-2">
+                        <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
+                        <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
+                        <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
+                    </div>
+                    <div class="py-2 font-bold">
+                        <p class="text-sm">
+                            <span class="text-green-400">const</span>
+                            <span class="text-purple-400">name</span>
+                            <span class="text-blue-400">=</span>
+                            <span class="text-yellow-400">"Dipan Nama"</span>
+                            <span class="text-blue-400">;</span>
+                        </p>
+                        <p class="text-sm">
+                            <span class="text-green-400">const</span>
+                            <span class="text-purple-400">profession</span>
+                            <span class="text-blue-400">=</span>
+                            <span class="text-yellow-400">"Web Developer"</span>
+                            <span class="text-blue-400">;</span>
+                        </p>
+                        <p class="text-sm">
+                            <span class="text-green-400">console.log</span>
+                            <span class="text-blue-400">(</span>
+                            <span class="text-yellow-400">"Hello World"</span>
+                            <span class="text-blue-400">)</span>
+                            <span class="text-blue-400">;</span>
+                        </p>
+                        <p class="text-sm">
+                            <span class="text-green-400">const</span>
+                            <span class="text-purple-400">greet</span>
+                            <span class="text-blue-400">=</span>
+                            <span class="text-blue-400">(</span>
+                            <span class="text-purple-400">name</span>
+                            <span class="text-blue-400">)</span>
+                            <span class="text-blue-400">=></span>
+                            <span class="text-blue-400">{</span>
+                            <br>
+                            <span class="text-green-400 pl-4">console.log</span>
+                            <span class="text-blue-400">(</span>
+                            <span class="text-yellow-400">`Hello, </span>
+                            <span class="text-teal-400">${</span>
+                            <span class="text-purple-400">name</span>
+                            <span class="text-teal-400">}</span>
+                            <span class="text-yellow-400">!`</span>
+                            <span class="text-blue-400">)</span>
+                            <br>
+                            <span class="text-blue-400">}</span>
+                            <span class="text-blue-400">;</span>
+                        </p>
+
+
+                    </div>
+                </div>
+
+                <!-- About page info block -->
+                <div
+                    class="right sm:flex-1 border flex flex-col gap-3 justify-center h-[40vh] p-5 border-zinc-800 rounded-2xl relative top-[10vh]">
+                    <div class="info flex flex-col justify-center items-center">
+                        <h1 class="text-[#14ae96] text-4xl font-bold">About Me</h1>
+                        <p class="text-white text-lg mt-5 ">Hi, My name is
+                            <span class="text-[#14ae96] font-bold"> Dipan Nama.</span>
+                        <p class="text-white text-md ">
+                            I'm a passionate frontend developer, programmer, CTF player &
+                            student from India. I'm currently pursuing my Masters in Computer Applications from
+                            The ICFAI University, Tripura.
+
+                        </p>
+                    </div>
+
+                    <div class="flex justify-evenly items-center m-4">
+                        <div class="flex flex-col items-center">
+                            <p class="text-[#14ae96] text-4xl font-bold">03+</p>
+                            <p class="font-bold mt-2">Years Experience</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <p class="text-[#14ae96] text-4xl font-bold">15+</p>
+                            <p class="font-bold mt-2">Projects Created</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <p class="text-[#14ae96] text-4xl font-bold">05+</p>
+                            <p class="font-bold mt-2">Completed Works</p>
+                        </div>
+                    </div>
+                    </p>
+                    <div class="flex justify-center items-center gap-3">
+                        <p
+                            class="text-lg border w-fit border-zinc-700 rounded-full px-5 py-2 font-medium pointer-events-auto transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white before:content-['>'] before:mr-2 before:text-[#14ae96] before:text-2xl before:font-bold before:transition-all before:duration-1000 before:hover:text-[#14ae96]">
+                            <a href="mailto:dipannama91@gmail.com">Download CV</a>
+                        </p>
+                        <a href="https://www.github.com/DipanNama" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-[#14ae96] text-lg border w-fit border-zinc-700 rounded-full px-3 py-2 font-medium font-bold transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/dipannama" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-[#14ae96] text-lg border w-fit border-zinc-700 rounded-full px-3 py-2 font-medium font-bold transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="https://www.x.com/dipannama91" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-[#14ae96] text-lg border w-fit border-zinc-700 rounded-full px-3 py-2 font-medium font-bold transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
-        <div class="dark" id="page2">
-            <div id="services">
+        <div id="technologies" class="bg-black">
+            <div class="container text-white">
+                technologies
+            </div>
+        </div>
+        <div id="projects" class="bg-black">
+            <div class="container text-white">
+                projects
+            </div>
+        </div>
+        <div id="experience" class="bg-black">
+            <div class="container text-white">
+                experience
+            </div>
+        </div>
+        <div id="services" class="bg-black">
+            <div class="container text-white">
                 services
+            </div>
+        </div>
+        <div id="contact" class="bg-black">
+            <div class="container text-white">
+                contact
             </div>
         </div>
     </main>
