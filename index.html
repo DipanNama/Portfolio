@@ -22,17 +22,26 @@
             <div class="bg-green-500 flex-1"></div>
         </div> -->
 
-        <div id="page" class="bg-black">
+        <div id="home" class="bg-black">
             <!-- Full screen navigation -->
             <div id="nav" class="w-full flex justify-between items-center p-4 px-[8vw]">
                 <img src="./assets/logo.png" alt="logo" class="logo w-48 invert aspect-auto z-[2] sm:w-64">
-                <i id="toggle-sidebar-open"
-                    class="ri-menu-2-line font-bold text-2xl z-[2] text-[#f3f7e0] sm:hidden"></i>
+
+                <div class="text-white font-medium uppercase text-sm border border-zinc-700 gap-5 hidden sm:flex bg-white/10 z-50 py-2 px-5 p-2 rounded-full backdrop-blur-3xl fixed top-[2%] left-[50%] translate-x-[-50%]">
+                    <a href="#home" id="home-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">Home</a>
+                    <a href="#about" id="about-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">About</a>
+                    <a href="#services" id="services-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">Services</a>
+                    <a href="#portfolio" id="portfolio-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">Portfolio</a>
+                    <a href="#contact" id="contact-link" class="nav-link border rounded-full p-2 border-transparent text-[#f3f7e0] hover:border-zinc-600 hover:font-bold hover:bg-zinc-600 transition duration-300">Contact</a>
+                  </div>
+                  
+
                 <a href="./assets/resume.pdf" download="Dipan Nama Resume"
                     class="resume-btn font-medium py-3 px-5 p-2 hidden sm:block text-center text-[#f3f7e0] z-[10] bg-zinc-900  rounded-full tracking-wide">Download
                     Resume
                     <i class="ri-arrow-right-line text-xl"></i>
                 </a>
+                <i id="toggle-sidebar-open" class="ri-menu-2-line font-bold text-2xl z-[2] text-[#f3f7e0] sm:hidden"></i>
             </div>
 
             <!-- Small screen sidebar -->
@@ -73,7 +82,7 @@
             </div>
 
             <!-- Hero section Main content -->
-            <div id="home" class="h-full">
+            <div class="h-full">
                 <div class="flex flex-col justify-center items-center h-screen">
                     <div class="text-center flex items-center flex-col z-[2]">
                         <h1 class="text-[3em] sm:text-[5em] font-bold text-[#14ae96]">Dipan Nama</h1>
@@ -182,7 +191,7 @@
 
 
                     <!-- <div id="code-snippet"
-                        class="dark absolute top-[20%]  z-[-1] right-[10%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white ">
+                        class="dark absolute top-[35%]  z-[5] left-[10%] w-[320px] h-[200px] hidden sm:block rounded-xl px-5 py-4 bg-black text-white ">
                         <div class="header h-[30px] flex justify-start items-center gap-2">
                             <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
                             <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
@@ -355,9 +364,14 @@
         </div>
 
         <div id="page1" class="dark">
-
+            <div id="about">
+                about
+            </div>
         </div>
         <div class="dark" id="page2">
+            <div id="services">
+                services
+            </div>
         </div>
     </main>
     <script src="./js/script.js"></script>

@@ -1,29 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+
+html,
+body {
     height: 100%;
     width: 100%;
     z-index: 0;
+    scroll-behavior: smooth;
 }
 
 
-#page{
+#home {
     position: relative;
     height: 100vh;
 }
 
 
 
-#page1{
+#page1 {
     height: 100vh;
     width: 100vw;
     /* background-color: indigo; */
 }
 
-#page2{
+#page2 {
     height: 100vh;
     width: 100vw;
     /* background-color: orangered; */
@@ -34,33 +37,35 @@ html,body{
 
 @layer utilities {
     .content-auto {
-      content-visibility: auto;
+        content-visibility: auto;
     }
-    .dark{
+
+    .dark {
         background-color: black;
         color: white;
     }
-    .light{
+
+    .light {
         background-color: white;
         color: black;
     }
 }
 
-#msg-block1{
+#msg-block1 {
     animation: updown1 7s infinite;
 }
 
-#msg-block2{
+#msg-block2 {
     animation: updown2 9s infinite;
 }
 
 
-#msg-block3{
+#msg-block3 {
     animation: updown3 8s infinite;
 }
 
 
-#msg-block4{
+#msg-block4 {
     animation: updown4 9s infinite;
 }
 
@@ -68,22 +73,27 @@ html,body{
     0% {
         transform: translateY(0);
     }
+
     20% {
         transform: translateX(-40px);
     }
+
     40% {
         transform: translateY(-30px);
     }
+
     60% {
         transform: translateX(50px);
     }
+
     80% {
         transform: translateY(-30px);
     }
+
     100% {
         transform: translateX(0);
     }
-    
+
 }
 
 
@@ -91,21 +101,26 @@ html,body{
     0% {
         transform: translateY(0);
     }
+
     20% {
         transform: translateX(-40px);
     }
+
     40% {
         transform: translateY(50px);
     }
+
     60% {
         transform: translateX(-30px);
     }
+
     80% {
         transform: translateY(40px);
     }
+
     100% {
         transform: translateX(0);
-    } 
+    }
 }
 
 
@@ -113,22 +128,27 @@ html,body{
     0% {
         transform: translateY(0);
     }
+
     20% {
         transform: translateX(-50px);
     }
+
     40% {
         transform: translateY(30px);
     }
+
     60% {
         transform: translateX(40px);
     }
+
     80% {
         transform: translateY(-30px);
     }
+
     100% {
         transform: translateX(0);
     }
-    
+
 }
 
 
@@ -136,20 +156,25 @@ html,body{
     0% {
         transform: translateY(0);
     }
+
     20% {
         transform: translateX(50px);
     }
+
     40% {
         transform: translateY(-40px);
     }
+
     60% {
         transform: translateX(-30px);
     }
+
     80% {
         transform: translateY(30px);
     }
+
     100% {
         transform: translateX(0);
     }
-    
+
 }
