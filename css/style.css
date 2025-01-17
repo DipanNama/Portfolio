@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+:root {
+    --size: 1.2;
+}
+
+.command {
+    cursor: pointer;
+}
+
+
+
 html,
 body {
     height: 100%;
@@ -28,7 +38,7 @@ a{
 }
 
 #about {
-    height: 60vh;
+    height: 80vh;
     width: 100vw;
     /* background-color: indigo; */
 }
