@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
         integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" />
 </head>
 
 <body>
@@ -207,14 +208,19 @@
         <div id="about" class="bg-black">
             <div class="container text-white flex flex-col sm:flex-row gap-20 justify-between  items-center p-5">
                 <!-- About page code block -->
-                <div id="code-snippet"
-                    class="dark absolute   z-[5]   h-[40vh] hidden sm:block rounded-xl px-5 py-4 bg-black text-white left sm:flex-1 border border-zinc-800 rounded-2xl relative top-[10vh] justify-center items-center">
-                    <div class="header h-[30px] flex justify-start items-center gap-2">
+                <div id="terminal"
+                    class="dark absolute z-[3] h-[50vh] hidden sm:block rounded-xl py-4 bg-black text-white left sm:flex-1 border border-zinc-800 rounded-2xl relative top-[10vh] justify-center items-center">
+                    <div class="header h-[30px] flex justify-start items-center gap-2 px-5 mb-3">
                         <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
                         <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
                         <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
                     </div>
-                    <div class="py-2 font-bold">
+                    <div class="border-t-2 border-zinc-800"></div>
+                    <!-- <div class="py-2 font-medium px-5"> -->
+                        <!-- <p>root@devdipan.tech:~$</p> -->
+                    <!-- </div> -->
+
+                    <!-- <div class="py-2 font-bold px-5">
                         <p class="text-sm">
                             <span class="text-green-400">const</span>
                             <span class="text-purple-400">name</span>
@@ -260,21 +266,23 @@
                         </p>
 
 
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- About page info block -->
                 <div
-                    class="right sm:flex-1 border flex flex-col gap-3 justify-center h-[40vh] p-5 border-zinc-800 rounded-2xl relative top-[10vh]">
+                    class="right sm:flex-1 border flex flex-col gap-3 justify-center h-[50vh] p-5 border-zinc-800 rounded-2xl relative top-[10vh]">
                     <div class="info flex flex-col justify-center items-center">
                         <h1 class="text-[#14ae96] text-4xl font-bold">About Me</h1>
                         <p class="text-white text-lg mt-5 ">Hi, My name is
                             <span class="text-[#14ae96] font-bold"> Dipan Nama.</span>
                         <p class="text-white text-md ">
                             I'm a passionate frontend developer, programmer, CTF player &
-                            student from India. I'm currently pursuing my Masters in Computer Applications from
+                            student from India.
+                        </p>
+                        <p class="text-white text-md ">
+                            I'm currently pursuing my MCA from
                             The ICFAI University, Tripura.
-
                         </p>
                     </div>
 
@@ -342,6 +350,14 @@
         </div>
     </main>
     <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/isomorphic-lolcat"></script>
+    <script src="https://cdn.jsdelivr.net/npm/figlet/lib/figlet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/animation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/xml_formatting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.x.x/css/jquery.terminal.min.css" /> -->
+    <script src="./js/terminal.js"></script>
 </body>
 
 </html>
