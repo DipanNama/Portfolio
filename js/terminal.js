@@ -10,11 +10,31 @@ const formatter = new Intl.ListFormat('en', {
 
 const url = 'https://v2.jokeapi.dev/joke/Programming';
 
-const files = [
-    'joke',
-    'credits',
-    'record'
+const data = [
+    about = 'My name is Dipan Nama. I am a passionate frontend developer, programmer, CTF player & student from India. I am currently pursuing my MCA from The ICFAI University, Tripura.',
+    skills = 'I am skilled in HTML, CSS, JavaScript, React.js, Redux, Node.js, Express.js, MongoDB, Python, Django, C, C++, Java, SQL, Git, Docker, Linux, etc.',
+    projects = 'I have worked on various projects like E-commerce website, Blog website, Portfolio website, Chat application, etc.',
+    education = 'I have completed my BCA from The ICFAI University, Tripura. Currently, I am pursuing my MCA from the same university.',
+    contact = 'You can contact me on my email id: dipannama91@gmail.com',
+    resume = 'You can download my resume from here: [Resume](https://drive.google.com/file/...)',
 ];
+
+const socials = [
+    Email = 'Email: dipannama91@gmail.com',
+    LinkedIn = 'LinkedIn: [Dipan Nama](https://www.linkedin.com/in/dipannama)',
+    GitHub = 'GitHub: [Dipan Nama](https://www.github.com/DipanNama)',
+    Twitter = 'Twitter: [Dipan Nama](https://www.twitter.com/dipannama)',
+];
+
+const files = [
+    'about.txt',
+    'skills.txt',
+    'education.txt',
+    'contact.txt',
+];
+
+const dirs = ['experiences', 'projects', 'services'];
+
 
 const help_details = [
     '[[b;white;]About]\n\t- Stop Stalking me',
@@ -28,17 +48,10 @@ const help_details = [
     // '[[b;white;]Help]\n\t- Show this help message'
 ];
 
-const data = [
-    about = 'My name is Dipan Nama. I am a passionate frontend developer, programmer, CTF player & student from India. I am currently pursuing my MCA from The ICFAI University, Tripura.',
-    skills = 'I am skilled in HTML, CSS, JavaScript, React.js, Redux, Node.js, Express.js, MongoDB, Python, Django, C, C++, Java, SQL, Git, Docker, Linux, etc.',
-    projects = 'I have worked on various projects like E-commerce website, Blog website, Portfolio website, Chat application, etc.',
-    education = 'I have completed my BCA from The ICFAI University, Tripura. Currently, I am pursuing my MCA from the same university.',
-    contact = 'You can contact me on my email id: dipannama91@gmail.com',
-    resume = 'You can download my resume from here: [Resume](https://drive.google.com/file/...)',
-];
+
 
 const commands = {
-    about(){
+    about() {
         term.clear();
         term.echo(data[0], { typing: true, delay: 40 });
     },
@@ -67,11 +80,18 @@ const commands = {
     },
     help() {
         term.clear();
-        term.echo(`[[b;white;]Type 'all' to see the full help list.\n${help_details.join('\n')}`);
+        term.echo(`[[b;white;]Type 'all' to see the full help menu.\n${help_details.join('\n')}`, { typing: true, delay: 40 });
     },
     all() {
         term.clear();
-        term.echo(`Availale commands : ${help}`);
+        term.echo(`Availale commands : ${help}`, { typing: true, delay: 40 });
+    },
+    cat(file) {
+        if (file in files) {
+            term.echo(files[file]);
+        } else {
+            this.error('File not found');
+        }
     },
     echo(...args) {
         // term.clear();
@@ -86,7 +106,7 @@ const commands = {
         } else if (dir.startsWith('~/') && dirs.includes(dir.substring(2))) {
             cwd = dir;
         } else if (dir.startsWith('../') && cwd !== root &&
-                   dirs.includes(dir.substring(3))) {
+            dirs.includes(dir.substring(3))) {
             cwd = root + '/' + dir.substring(3);
         } else if (dirs.includes(dir)) {
             cwd = root + '/' + dir;
@@ -96,6 +116,7 @@ const commands = {
     },
 
     ls(dir = null) {
+        term.clear();
         if (dir) {
             if (dir.match(/^~\/?$/)) {
                 // ls ~ or ls ~/
@@ -131,13 +152,7 @@ const commands = {
         const res = await fetch(url);
         const data = await res.json();
         if (data.type == 'twopart') {
-            // this method allow to create sequence of animations
             this.animation(async () => {
-                // as said before in every function, passed 
-                // directly to terminal, you can use `this` object
-                // to reference terminal instance
-                // and since we use arrow function we reference
-                // this from joke function/command
                 await this.echo(`Q: ${data.setup}`, {
                     delay: 50,
                     typing: true
@@ -153,7 +168,11 @@ const commands = {
                 typing: true
             });
         }
-    } 
+    },
+    reset() {
+        term.clear();
+        ready();
+    }
 };
 
 
@@ -166,8 +185,6 @@ const formatted_list = command_list.map(cmd => {
     return `<white class="command">${cmd}</white>`;
 });
 // const help = formatter.format(formatted_list);
-
-const dirs = ['education', 'projects', 'skills'];
 
 
 const directories = {
@@ -185,20 +202,20 @@ const directories = {
         '[[b;white;]Open Source projects',
         [
             ['jQuery Terminal',
-             'https://terminal.jcubic.pl',
-             'library that adds terminal interface to websites'
+                'https://terminal.jcubic.pl',
+                'library that adds terminal interface to websites'
             ],
             ['LIPS Scheme',
-             'https://lips.js.org',
-             'Scheme implementation in JavaScript'
+                'https://lips.js.org',
+                'Scheme implementation in JavaScript'
             ],
             ['Sysend.js',
-             'https://jcu.bi/sysend',
-             'Communication between open tabs'
+                'https://jcu.bi/sysend',
+                'Communication between open tabs'
             ],
             ['Wayne',
-             'https://jcu.bi/wayne',
-             'Pure in browser HTTP requests'
+                'https://jcu.bi/wayne',
+                'Pure in browser HTTP requests'
             ],
         ].map(([name, url, description = '']) => {
             return `* <a href="${url}">${name}</a> &mdash; <white>${description}</white>`;
@@ -245,18 +262,6 @@ function print_home() {
     }).join('\n'));
 }
 
-// $.terminal.xml_formatter.tags.green = () => {
-//     return `[[;#44D544;]`;
-// };
-
-// $.terminal.xml_formatter.tags.blue = (attrs) => {
-//     return `[[;#55F;;${attrs.class}]`;
-// };
-
-// $.terminal.xml_formatter.tags.green = (attrs) => {
-//     return `[[;#44D544;;${attrs.class}]`;
-// };
-
 
 const root = '~';
 let cwd = root;
@@ -288,10 +293,10 @@ const term = $('#terminal').terminal(commands, {
 });
 
 
-term.on('click', '.command', function() {
+term.on('click', '.command', function () {
     const command = $(this).text();
     term.exec(command);
- });
+});
 
 // term.pause();
 
@@ -325,7 +330,7 @@ function hex(color) {
 
 $.terminal.new_formatter([
     /<big>(.*?)<\/big>/g, '[[;;;;;{"style": "--size: 1.5;letter-spacing: 2px"}]$1]',
-//     // /<white>(.*?)<\/white>/g, '[[;red;]$1]'
+    //     // /<white>(.*?)<\/white>/g, '[[;red;]$1]'
 ]);
 
 $.terminal.new_formatter([/\[([^]+)\]\((.*?)\)/g, function (_, label, url) {
