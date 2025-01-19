@@ -17,7 +17,7 @@
     <main id="main" class="overflow-x-hidden z-[-5]">
 
         <!-- <div class="page-loading bg-red-500 z-[5] h-screen w-screen hidden"></div> -->
-
+        <!-- Home Page -->
         <div id="home" class="bg-black">
             <!-- Full screen navigation -->
             <div id="nav" class="w-full flex justify-between items-center p-4 px-[8vw]">
@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center items-center absolute bottom-0">
-                        <a href="#page1" class="scroll-btn animate-bounce text-[#8b5cf6] h-fit w-fit">
+                        <a href="#about" class="scroll-btn animate-bounce text-[#8b5cf6] h-fit w-fit">
                             <i class="ri-arrow-down-s-line text-4xl"></i>
                         </a>
                     </div>
@@ -199,7 +199,9 @@
                         </div>
                     </div>
 
+                    <img src="./assets/clickhere.gif" class="scale-x-[-1] absolute bottom-[-20vh] left-[20vw]" alt="arrow">
                 </div>
+
             </div>
 
         </div>
@@ -210,14 +212,23 @@
                 <!-- About page code block -->
                 <div id="terminal"
                     class="dark absolute z-[3] h-[50vh] hidden sm:block rounded-xl py-4 bg-black text-white left sm:flex-1 border border-zinc-800 rounded-2xl relative top-[10vh] justify-center items-center">
-                    <div class="header h-[30px] flex justify-start items-center gap-2 px-5 mb-3">
-                        <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
-                        <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
-                        <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
+                    <div class="header h-[30px] flex justify-between items-center gap-2 px-5 mb-3">
+                        <div class="flex gap-1">
+                            <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
+                            <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
+                            <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
+                        </div>
+                        <div>
+                            <!-- <p class="text-zinc-500">Terminal Portfolio</p> -->
+                            <p class="text-zinc-500">~/dipan.txt</p>
+                        </div>
+                        <div>
+                            <i class="ri-terminal-box-line text-2xl text-[#f3f7e0]"></i>
+                        </div>
                     </div>
                     <div class="border-t-2 border-zinc-800"></div>
                     <!-- <div class="py-2 font-medium px-5"> -->
-                        <!-- <p>root@devdipan.tech:~$</p> -->
+                    <!-- <p>root@devdipan.tech:~$</p> -->
                     <!-- </div> -->
 
                     <!-- <div class="py-2 font-bold px-5">
@@ -321,11 +332,28 @@
                     </div>
 
                 </div>
+                <div class="flex justify-center items-center absolute bottom-[-90vh] left-[50%] translate-x-[-50%]">
+                    <a href="#technologies" class="scroll-btn animate-bounce text-[#8b5cf6] h-fit w-fit">
+                        <i class="ri-arrow-down-s-line text-4xl"></i>
+                    </a>
+                </div>
             </div>
         </div>
-        <div id="technologies" class="bg-black">
-            <div class="container text-white">
-                technologies
+
+        <!-- Technologies Page -->
+        <div id="technologies" class="bg-black pt-20">
+            <div class="container">
+                <div class="heading text-white flex flex-row gap-5 justify-center items-center p-5">
+                    <img src="./assets/showcase.jpg" class="scale-x-[-1] h-[10vh]" alt="left arrow">
+                    <span class="font-bold text-2xl">Technology Skills</span>
+                    <img src="./assets/showcase.jpg" class="h-[10vh]" alt="right arrow">
+                </div>
+                <div class="line-1">
+                    
+                </div>
+                <div class="line-2">
+                    ron wisley
+                </div>
             </div>
         </div>
         <div id="projects" class="bg-black">
