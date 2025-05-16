@@ -4,6 +4,56 @@
     box-sizing: border-box;
 }
 
+/* Page Loader Animation Styles */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+.loader-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.coding-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    color: white;
+    opacity: 0;
+    animation: breathing 1.5s ease-in-out forwards;
+}
+
+@keyframes breathing {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+/* Circle loader animation has been removed */
+
 :root {
     --size: 1.2;
 }
@@ -161,6 +211,11 @@ a{
                 color var(--transition-speed) var(--transition-function),
                 border-color var(--transition-speed) var(--transition-function),
                 box-shadow var(--transition-speed) var(--transition-function);
+}
+
+/* Site wrapper transition for page loader */
+#smooth-wrapper {
+    transition: opacity 0.8s ease;
 }
 
 /* Project button animations */
@@ -634,4 +689,373 @@ body.light .dot.green { background: #27c93f; }
 body.dark {
     background: #18181b;
     color: #f3f7e0;
+}
+
+/* Mobile sidebar enhancements */
+#sidebar {
+    overflow-y: auto;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Content container with scrolling for sidebar */
+#sidebar > ul,
+#sidebar > div {
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Active link state for mobile sidebar */
+#sidebar a.active {
+    color: var(--accent-primary);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Social icons container animations */
+.social-icons-container a {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icons-container a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(20, 174, 150, 0.4);
+}
+
+/* Active nav item styling for both desktop and mobile */
+.nav-link.active {
+    background-color: #14ae96;
+    border-color: #14ae96;
+    font-weight: bold;
+}
+
+/* Additional mobile menu styling */
+#sidebar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#sidebar ul li a:hover span,
+#sidebar ul li a.active span {
+    color: var(--accent-primary);
+}
+
+.tech-chip {
+    transition: all 0.2s ease-in-out;
+}
+
+.tech-chip:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(20, 174, 150, 0.15);
+}
+
+/* Project image hover effects */
+.project-card .w-full.h-40 {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.project-card .w-full.h-40 img {
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card .w-full.h-40::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.7));
+    z-index: 1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .w-full.h-40::after {
+    opacity: 0.4;
+}
+
+/* Enhanced Desktop Resume Button Styles */
+.desktop-resume-btn {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+}
+
+.desktop-resume-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.desktop-resume-btn:hover {
+    transform: translateY(-3px);
+}
+
+.desktop-resume-btn:hover::before {
+    left: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .desktop-resume-btn::before {
+        display: none;
+    }
+}
+
+/* Hero Section Enhancements */
+
+/* 1. Typing Effect Cursor */
+.typed-cursor {
+    color: var(--accent-primary);
+    font-weight: bold;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 2. Availability Badge */
+.availability-badge {
+    transition: all 0.3s ease;
+}
+
+.availability-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.pulse-dot {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+/* 3. Enhanced Scroll Indicator */
+.scroll-indicator-container {
+    width: 2px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-indicator-dot {
+    width: 100%;
+    height: 10px;
+    background-color: var(--accent-primary);
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    animation: scrolling 2.5s infinite;
+}
+
+@keyframes scrolling {
+    0% {
+        top: -10px;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes pulse-fade {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-pulse-fade {
+    animation: pulse-fade 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Interactive Particles */
+#particles-container {
+    width: 100%;
+    height: 100%;
+}
+
+.particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Enhanced About Section Styles */
+.achievements {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievements:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(20, 174, 150, 0.2);
+}
+
+.resume-download-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-download-btn:hover {
+    transform: translateY(-2px);
+}
+
+.social-link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: rgba(20, 174, 150, 0.1);
+    transform: translateY(-3px);
+}
+
+.stat-item {
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateX(5px);
+}
+
+/* Skill ratings animations */
+.skill-rating {
+    transition: all 0.3s ease;
+}
+
+.skill-rating:hover {
+    transform: translateX(5px);
+}
+
+.skill-rating .h-1\.5 {
+    transition: all 0.3s ease;
+}
+
+.skill-rating:hover .h-1\.5 {
+    height: 0.5rem;
+}
+
+/* Certification items animations */
+.certification-item {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.certification-item:hover {
+    background-color: rgba(20, 174, 150, 0.1);
+    transform: translateX(5px);
+}
+
+/* Portfolio button animations */
+.portfolio-btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-btn:hover {
+    transform: translateY(-3px);
+}
+
+.portfolio-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(20, 174, 150, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.portfolio-btn:hover::before {
+    transform: translateX(100%);
+}
+
+/* Fancy scroll indicator for About section */
+.scroll-btn-fancy {
+    cursor: pointer;
+}
+
+.scroll-fancy-indicator {
+    width: 2px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-fancy-dot {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to bottom, #14ae96, #8b5cf6);
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    animation: fancy-scrolling 2.5s infinite;
+}
+
+@keyframes fancy-scrolling {
+    0% {
+        top: -10px;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+/* Responsive adjustments for about section */
+@media (max-width: 768px) {
+    .stats {
+        margin-top: 2rem;
+    }
+    
+    .achievements {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Enhance typography in about section */
+#about p {
+    letter-spacing: 0.01em;
+    line-height: 1.7;
+}
+
+#about h3 {
+    letter-spacing: 0.02em;
 }
