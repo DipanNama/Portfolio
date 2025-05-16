@@ -1,15 +1,44 @@
 const toggleSidebarOpen = document.querySelector('#toggle-sidebar-open');
 const toggleSidebarClose = document.querySelector('#toggle-sidebar-close');
 const nav = document.querySelector('#nav');
+const sidebar = document.querySelector('#sidebar');
+
+// Add CSS for sidebar animation
+const style = document.createElement('style');
+style.innerHTML = `
+  #sidebar {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  #sidebar.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+document.head.appendChild(style);
 
 toggleSidebarOpen.addEventListener('click', () => {
-  document.querySelector('#sidebar').classList.remove('hidden');
+  sidebar.classList.remove('hidden');
   nav.classList.add('hidden');
+  
+  // Trigger reflow to ensure transition works
+  sidebar.offsetWidth;
+  
+  // Add active class to animate in
+  sidebar.classList.add('active');
 });
 
 toggleSidebarClose.addEventListener('click', () => {
-  document.querySelector('#sidebar').classList.add('hidden');
-  nav.classList.remove('hidden');
+  // First remove active class to trigger animation
+  sidebar.classList.remove('active');
+  
+  // After animation completes, hide the sidebar
+  setTimeout(() => {
+    sidebar.classList.add('hidden');
+    nav.classList.remove('hidden');
+  }, 300); // Same duration as the CSS transition
 });
 
 const msgBlocks = document.querySelectorAll('.msg-block');
@@ -25,18 +54,41 @@ msgBlocks.forEach(msgBlock => {
 });
 
 
-// Get all links
+// Get all navigation links (both desktop and mobile)
 const navLinks = document.querySelectorAll('.nav-link');
+const mobileNavLinks = document.querySelectorAll('#sidebar li a');
 
 // Function to set the active class
 function setActiveLink() {
+  const currentHash = window.location.hash || '#home';
+  
+  // Update desktop navigation
   navLinks.forEach(link => {
     // Remove active styles from all links
-    link.classList.remove('bg-zinc-700', 'font-bold', 'border-zinc-600');
+    link.classList.remove('bg-zinc-700', 'font-bold', 'border-zinc-600', 'active');
 
     // Add active styles to the current link
-    if (link.getAttribute('href') === window.location.hash) {
-      link.classList.add('bg-zinc-700', 'font-bold', 'border-zinc-600');
+    if (link.getAttribute('href') === currentHash) {
+      link.classList.add('bg-zinc-700', 'font-bold', 'border-zinc-600', 'active');
+    }
+  });
+  
+  // Update mobile navigation
+  mobileNavLinks.forEach(link => {
+    // Remove active styles
+    link.classList.remove('active', 'bg-white/10');
+    
+    if (link.querySelector('span')) {
+      link.querySelector('span').classList.remove('text-[#14ae96]');
+    }
+    
+    // Add active styles to current link
+    if (link.getAttribute('href') === currentHash) {
+      link.classList.add('active', 'bg-white/10');
+      
+      if (link.querySelector('span')) {
+        link.querySelector('span').classList.add('text-[#14ae96]');
+      }
     }
   });
 }
@@ -46,6 +98,20 @@ setActiveLink();
 
 // Set active link on hash change
 window.addEventListener('hashchange', setActiveLink);
+
+// Close sidebar when a mobile menu link is clicked
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // First remove active class to trigger animation
+    sidebar.classList.remove('active');
+    
+    // After animation completes, hide the sidebar
+    setTimeout(() => {
+      sidebar.classList.add('hidden');
+      nav.classList.remove('hidden');
+    }, 300);
+  });
+});
 
 
 function setupIntersectionOvserver(element, isLTR, speed){
