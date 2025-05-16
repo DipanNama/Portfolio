@@ -7,10 +7,12 @@
     <title>Dipan Nama | Web Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/terminal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
         integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" />
 </head>
 
 <body>
@@ -162,44 +164,90 @@
                         </div>
                     </div>
 
-                    <!-- Message Blocks -->
-                    <div class="z-[2]">
+                    <!-- Message Blocks (Responsive & Meaningful) -->
+                    <div class="z-[2] flex flex-col gap-4 sm:flex-row sm:gap-0 sm:justify-between items-center w-full px-2 sm:px-0">
+                        <!-- Message Block 1: Terminal with Code Snippet -->
                         <div id="msg-block1"
-                            class="msg-block hidden sm:inline-flex sm:w-[320px]  sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[20%] left-[30%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
-                            <div class="p-5 flex-1">
-                                <div class="h-5 w-42 bg-white/20 rounded-xl"></div>
+                            class="msg-block w-full sm:w-[320px] h-auto bg-[#0d1117]/90 rounded-xl relative sm:absolute top-0 left-0 sm:top-[20%] sm:left-[30%] sm:translate-x-[-50%] sm:translate-y-[-50%] mb-2 sm:mb-0 border border-zinc-800 overflow-hidden shadow-lg">
+                            <div class="terminal-header px-3 py-2 flex items-center">
+                                <div class="terminal-dots">
+                                    <div class="terminal-dot red"></div>
+                                    <div class="terminal-dot yellow"></div>
+                                    <div class="terminal-dot green"></div>
+                                </div>
+                                <div class="terminal-title ml-auto mr-auto">leetcode.js</div>
                             </div>
-                            <div class="bg-blue-500 h-5 w-16 rounded-xl"></div>
+                            <div class="p-3 text-xs sm:text-sm font-mono">
+                                <div class="text-blue-400">// Top 5% on LeetCode</div>
+                                <div class="text-green-400">function <span class="text-yellow-300">solveAlgorithm</span>(<span class="text-orange-300">problem</span>) {</div>
+                                <div class="pl-4 text-white">return <span class="text-purple-400">optimizedSolution</span>;</div>
+                                <div class="text-green-400">}</div>
+                            </div>
                         </div>
-
-
+                        
+                        <!-- Message Block 2: Terminal with Quote -->
                         <div id="msg-block2"
-                            class="msg-block hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[30%] right-[5%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
-                            <div class="p-5 flex-1">
-                                <div class="h-5 w-48 bg-white/20 rounded-xl"></div>
+                            class="msg-block w-full sm:w-[320px] h-auto bg-[#0d1117]/90 rounded-xl relative sm:absolute top-0 right-0 sm:top-[30%] sm:right-[5%] sm:translate-x-[-50%] sm:translate-y-[-50%] mb-2 sm:mb-0 border border-zinc-800 overflow-hidden shadow-lg">
+                            <div class="terminal-header px-3 py-2 flex items-center">
+                                <div class="terminal-dots">
+                                    <div class="terminal-dot red"></div>
+                                    <div class="terminal-dot yellow"></div>
+                                    <div class="terminal-dot green"></div>
+                                </div>
+                                <div class="terminal-title ml-auto mr-auto">quote.js</div>
                             </div>
-                            <div class="bg-red-500 h-5 w-16 rounded-xl"></div>
+                            <div class="p-3 text-xs sm:text-sm font-mono">
+                                <div class="text-blue-400">// Developer wisdom</div>
+                                <div class="text-green-400">console.<span class="text-yellow-300">log</span>(</div>
+                                <div class="pl-4 text-orange-300">"Code is like humor. When you have to explain it, it's bad."</div>
+                                <div class="text-green-400">);</div>
+                                <div class="text-zinc-500">// - Cory House</div>
+                            </div>
                         </div>
-
-
+                        
+                        <!-- Message Block 3: Terminal with CTF -->
                         <div id="msg-block3"
-                            class="msg-block hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[75%] left-[10%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
-                            <div class="p-5 flex-1">
-                                <div class="h-5 w-44 bg-white/20 rounded-xl"></div>
+                            class="msg-block w-full sm:w-[320px] h-auto bg-[#0d1117]/90 rounded-xl relative sm:absolute top-0 left-0 sm:top-[75%] sm:left-[10%] sm:translate-x-[-50%] sm:translate-y-[-50%] mb-2 sm:mb-0 border border-zinc-800 overflow-hidden shadow-lg">
+                            <div class="terminal-header px-3 py-2 flex items-center">
+                                <div class="terminal-dots">
+                                    <div class="terminal-dot red"></div>
+                                    <div class="terminal-dot yellow"></div>
+                                    <div class="terminal-dot green"></div>
+                                </div>
+                                <div class="terminal-title ml-auto mr-auto">ctf.sh</div>
                             </div>
-                            <div class="bg-orange-500 h-5 w-20 rounded-xl"></div>
+                            <div class="p-3 text-xs sm:text-sm font-mono">
+                                <div class="text-green-400">$ <span class="text-white">./capture_the_flag</span></div>
+                                <div class="text-white">Cybersecurity challenges accepted!</div>
+                                <div class="text-green-400">$ <span class="text-white">echo</span> <span class="text-orange-300">"Always up for a challenge!"</span></div>
+                                <div class="text-yellow-300 typing-animation">flag{h4ck1ng_sk1ll5}</div>
+                            </div>
                         </div>
-
+                        
+                        <!-- Message Block 4: Terminal with Skills -->
                         <div id="msg-block4"
-                            class="msg-block hidden sm:inline-flex sm:w-[320px] sm:h-[80px] bg-[white]/10 rounded-xl absolute top-[85%] right-[15%] translate-x-[-50%] translate-y-[-50%] flex items-center flex-row items-center justify-between p-5">
-                            <div class="p-5 flex-1">
-                                <div class="h-5 w-40 bg-white/20 rounded-xl"></div>
+                            class="msg-block w-full sm:w-[320px] h-auto bg-[#0d1117]/90 rounded-xl relative sm:absolute top-0 right-0 sm:top-[85%] sm:right-[15%] sm:translate-x-[-50%] sm:translate-y-[-50%] border border-zinc-800 overflow-hidden shadow-lg">
+                            <div class="terminal-header px-3 py-2 flex items-center">
+                                <div class="terminal-dots">
+                                    <div class="terminal-dot red"></div>
+                                    <div class="terminal-dot yellow"></div>
+                                    <div class="terminal-dot green"></div>
+                                </div>
+                                <div class="terminal-title ml-auto mr-auto">skills.ts</div>
                             </div>
-                            <div class="bg-green-500 h-5 w-20 rounded-xl"></div>
+                            <div class="p-3 text-xs sm:text-sm font-mono">
+                                <div class="text-blue-400">// Currently learning</div>
+                                <div class="text-purple-400">interface <span class="text-yellow-300">Developer</span> {</div>
+                                <div class="pl-4 text-green-400">skills: <span class="text-orange-300">string[]</span>;</div>
+                                <div class="pl-4 text-green-400">status: <span class="text-orange-300">string</span>;</div>
+                                <div class="text-purple-400">}</div>
+                                <div class="text-white">// Open for freelance projects!</div>
+                            </div>
                         </div>
                     </div>
 
-                    <img src="./assets/clickhere.gif" class="scale-x-[-1] absolute bottom-[-20vh] left-[20vw]" alt="arrow">
+                    <img src="./assets/clickhere.gif" class="scale-x-[-1] absolute bottom-[-20vh] left-[20vw]"
+                        alt="arrow">
                 </div>
 
             </div>
@@ -208,174 +256,267 @@
 
         <!-- About Page -->
         <div id="about" class="bg-black">
-            <div class="container text-white flex flex-col sm:flex-row gap-20 justify-between  items-center p-5">
+            <div class="container text-white flex flex-col md:flex-row gap-8 md:gap-12 justify-between items-stretch p-4 md:p-8 xl:p-12 max-w-7xl mx-auto">
                 <!-- About page code block -->
                 <div id="terminal"
-                    class="dark absolute z-[3] h-[50vh] hidden sm:block rounded-xl py-4 bg-black text-white left sm:flex-1 border border-zinc-800 rounded-2xl relative top-[10vh] justify-center items-center">
-                    <div class="header h-[30px] flex justify-between items-center gap-2 px-5 mb-3">
-                        <div class="flex gap-1">
-                            <div class="circle bg-red-500 h-4 w-4 rounded-full"></div>
-                            <div class="circle bg-yellow-500 h-4 w-4 rounded-full"></div>
-                            <div class="circle bg-green-500 h-4 w-4 rounded-full"></div>
+                    class="terminal-container dark hidden sm:flex flex-col flex-1 min-w-0 rounded-xl bg-black text-white border border-zinc-800 rounded-2xl justify-center items-center relative">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
                         </div>
-                        <div>
-                            <!-- <p class="text-zinc-500">Terminal Portfolio</p> -->
-                            <p class="text-zinc-500">~/dipan.txt</p>
-                        </div>
-                        <div>
-                            <i class="ri-terminal-box-line text-2xl text-[#f3f7e0]"></i>
-                        </div>
+                        <span class="terminal-title">Terminal — Dipan Nama</span>
+                        <span class="header-icon"><i class="ri-terminal-box-line"></i></span>
                     </div>
-                    <div class="border-t-2 border-zinc-800"></div>
-                    <!-- <div class="py-2 font-medium px-5"> -->
-                    <!-- <p>root@devdipan.tech:~$</p> -->
-                    <!-- </div> -->
-
-                    <!-- <div class="py-2 font-bold px-5">
-                        <p class="text-sm">
-                            <span class="text-green-400">const</span>
-                            <span class="text-purple-400">name</span>
-                            <span class="text-blue-400">=</span>
-                            <span class="text-yellow-400">"Dipan Nama"</span>
-                            <span class="text-blue-400">;</span>
-                        </p>
-                        <p class="text-sm">
-                            <span class="text-green-400">const</span>
-                            <span class="text-purple-400">profession</span>
-                            <span class="text-blue-400">=</span>
-                            <span class="text-yellow-400">"Web Developer"</span>
-                            <span class="text-blue-400">;</span>
-                        </p>
-                        <p class="text-sm">
-                            <span class="text-green-400">console.log</span>
-                            <span class="text-blue-400">(</span>
-                            <span class="text-yellow-400">"Hello World"</span>
-                            <span class="text-blue-400">)</span>
-                            <span class="text-blue-400">;</span>
-                        </p>
-                        <p class="text-sm">
-                            <span class="text-green-400">const</span>
-                            <span class="text-purple-400">greet</span>
-                            <span class="text-blue-400">=</span>
-                            <span class="text-blue-400">(</span>
-                            <span class="text-purple-400">name</span>
-                            <span class="text-blue-400">)</span>
-                            <span class="text-blue-400">=></span>
-                            <span class="text-blue-400">{</span>
-                            <br>
-                            <span class="text-green-400 pl-4">console.log</span>
-                            <span class="text-blue-400">(</span>
-                            <span class="text-yellow-400">`Hello, </span>
-                            <span class="text-teal-400">${</span>
-                            <span class="text-purple-400">name</span>
-                            <span class="text-teal-400">}</span>
-                            <span class="text-yellow-400">!`</span>
-                            <span class="text-blue-400">)</span>
-                            <br>
-                            <span class="text-blue-400">}</span>
-                            <span class="text-blue-400">;</span>
-                        </p>
-
-
-                    </div> -->
+                    <hr class="terminal-divider" />
+                    <div class="terminal-output w-full">
+                        <!-- Terminal content rendered by JS -->
+                    </div>
                 </div>
-
                 <!-- About page info block -->
-                <div
-                    class="right sm:flex-1 border flex flex-col gap-3 justify-center h-[50vh] p-5 border-zinc-800 rounded-2xl relative top-[10vh]">
+                <div class="right flex flex-1 min-w-0 border flex-col gap-3 justify-center p-5 border-zinc-800 rounded-2xl">
                     <div class="info flex flex-col justify-center items-center">
-                        <h1 class="text-[#14ae96] text-4xl font-bold">About Me</h1>
-                        <p class="text-white text-lg mt-5 ">Hi, My name is
+                        <h1 class="text-[#14ae96] text-3xl md:text-4xl font-bold">About Me</h1>
+                        <p class="text-white text-base md:text-lg mt-5 text-center">Hi, My name is
                             <span class="text-[#14ae96] font-bold"> Dipan Nama.</span>
-                        <p class="text-white text-md ">
-                            I'm a passionate frontend developer, programmer, CTF player &
-                            student from India.
                         </p>
-                        <p class="text-white text-md ">
-                            I'm currently pursuing my MCA from
-                            The ICFAI University, Tripura.
+                        <p class="text-white text-sm md:text-md text-center">
+                            I'm a passionate frontend developer, programmer, CTF player & student from India.
+                        </p>
+                        <p class="text-white text-sm md:text-md text-center">
+                            I'm currently pursuing my MCA from The ICFAI University, Tripura.
                         </p>
                     </div>
-
-                    <div class="flex justify-evenly items-center m-4">
-                        <div class="flex flex-col items-center">
-                            <p class="text-[#14ae96] text-4xl font-bold">03+</p>
-                            <p class="font-bold mt-2">Years Experience</p>
+                    <div class="flex flex-wrap justify-evenly items-center gap-4 my-4 w-full">
+                        <div class="flex flex-col items-center min-w-[100px] flex-1">
+                            <p class="text-[#14ae96] text-2xl md:text-4xl font-bold">03+</p>
+                            <p class="font-bold mt-2 text-xs md:text-base">Years Experience</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <p class="text-[#14ae96] text-4xl font-bold">15+</p>
-                            <p class="font-bold mt-2">Projects Created</p>
+                        <div class="flex flex-col items-center min-w-[100px] flex-1">
+                            <p class="text-[#14ae96] text-2xl md:text-4xl font-bold">15+</p>
+                            <p class="font-bold mt-2 text-xs md:text-base">Projects Created</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <p class="text-[#14ae96] text-4xl font-bold">05+</p>
-                            <p class="font-bold mt-2">Completed Works</p>
+                        <div class="flex flex-col items-center min-w-[100px] flex-1">
+                            <p class="text-[#14ae96] text-2xl md:text-4xl font-bold">05+</p>
+                            <p class="font-bold mt-2 text-xs md:text-base">Completed Works</p>
                         </div>
                     </div>
-                    </p>
-                    <div class="flex justify-center items-center gap-3">
-                        <p
-                            class="text-lg border w-fit border-zinc-700 rounded-full px-5 py-2 font-medium pointer-events-auto transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white before:content-['>'] before:mr-2 before:text-[#14ae96] before:text-2xl before:font-bold before:transition-all before:duration-1000 before:hover:text-[#14ae96]">
-                            <a href="mailto:dipannama91@gmail.com">Download CV</a>
-                        </p>
-                        <a href="https://www.github.com/DipanNama" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-[#14ae96] text-lg border w-fit border-zinc-700 rounded-full px-3 py-2 font-medium font-bold transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white">
-                            <i class="ri-github-fill"></i>
+                    <div class="flex justify-center items-center gap-3 mt-2">
+                        <a href="https://www.github.com/DipanNama" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="ri-github-fill text-2xl hover:text-[#14ae96]"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/dipannama" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-[#14ae96] text-lg border w-fit border-zinc-700 rounded-full px-3 py-2 font-medium font-bold transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white">
-                            <i class="ri-linkedin-fill"></i>
+                        <a href="https://www.linkedin.com/in/dipannama" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="ri-linkedin-fill text-2xl hover:text-[#14ae96]"></i>
                         </a>
-                        <a href="https://www.x.com/dipannama91" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-[#14ae96] text-lg border w-fit border-zinc-700 rounded-full px-3 py-2 font-medium font-bold transition hover:transition-shadow hover:duration-1000 hover:bg-zinc-900 text-white">
-                            <i class="ri-twitter-x-line"></i>
+                        <a href="https://www.x.com/dipannama91" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                            <i class="ri-twitter-x-line text-2xl hover:text-[#14ae96]"></i>
                         </a>
                     </div>
-
                 </div>
-                <div class="flex justify-center items-center absolute bottom-[-90vh] left-[50%] translate-x-[-50%]">
-                    <a href="#technologies" class="scroll-btn animate-bounce text-[#8b5cf6] h-fit w-fit">
-                        <i class="ri-arrow-down-s-line text-4xl"></i>
-                    </a>
-                </div>
+            </div>
+            <div class="flex justify-center items-center mt-4">
+                <a href="#technologies" class="scroll-btn animate-bounce text-[#8b5cf6] h-fit w-fit">
+                    <i class="ri-arrow-down-s-line text-4xl"></i>
+                </a>
             </div>
         </div>
 
-        <!-- Technologies Page -->
-        <div id="technologies" class="bg-black pt-20">
-            <div class="container">
+        <!-- Skills Section -->
+        <div id="technologies" class="bg-black pt-16 pb-8">
+            <div class="container flex flex-col gap-10 justify-center items-center">
                 <div class="heading text-white flex flex-row gap-5 justify-center items-center p-5">
-                    <img src="./assets/showcase.jpg" class="scale-x-[-1] h-[10vh]" alt="left arrow">
-                    <span class="font-bold text-2xl">Technology Skills</span>
-                    <img src="./assets/showcase.jpg" class="h-[10vh]" alt="right arrow">
+                    <span class="text-3xl font-bold mb-2 text-[#14ae96]">My Skills</span>
                 </div>
-                <div class="line-1">
-                    
+                
+                <!-- Frontend Skills -->
+                <div class="w-full">
+                    <h3 class="text-xl font-semibold mb-4 text-white text-center">Frontend</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/html.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="HTML">
+                            <span class="text-white text-sm text-center">HTML</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/css-3.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="CSS">
+                            <span class="text-white text-sm text-center">CSS</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/java-script.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="JavaScript">
+                            <span class="text-white text-sm text-center">JavaScript</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/reactjs.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="React.js">
+                            <span class="text-white text-sm text-center">React.js</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/nextjs.webp" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Next.js">
+                            <span class="text-white text-sm text-center">Next.js</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/tailwind.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Tailwind">
+                            <span class="text-white text-sm text-center">Tailwind CSS</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="line-2">
-                    ron wisley
+                
+                <!-- Backend Skills -->
+                <div class="w-full">
+                    <h3 class="text-xl font-semibold mb-4 text-white text-center">Backend & Tools</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/nodejs.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Node.js">
+                            <span class="text-white text-sm text-center">Node.js</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/express.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Express.js">
+                            <span class="text-white text-sm text-center">Express.js</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/mongodb.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="MongoDB">
+                            <span class="text-white text-sm text-center">MongoDB</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/firebase.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Firebase">
+                            <span class="text-white text-sm text-center">Firebase</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/typescript.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="TypeScript">
+                            <span class="text-white text-sm text-center">TypeScript</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/python.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Python">
+                            <span class="text-white text-sm text-center">Python</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- DevOps & Other Skills -->
+                <div class="w-full">
+                    <h3 class="text-xl font-semibold mb-4 text-white text-center">DevOps & Others</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/github.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="GitHub">
+                            <span class="text-white text-sm text-center">GitHub</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/docker.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Docker">
+                            <span class="text-white text-sm text-center">Docker</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/linux.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Linux">
+                            <span class="text-white text-sm text-center">Linux</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/burpsuite.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Burp Suite">
+                            <span class="text-white text-sm text-center">Burp Suite</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/gnu-bash.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Bash">
+                            <span class="text-white text-sm text-center">Bash</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
+                            <img src="./assets/tools-icon/wordpress.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="WordPress">
+                            <span class="text-white text-sm text-center">WordPress</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="projects" class="bg-black">
+
+        <!-- Projects Page -->
+        <div id="projects" class="bg-black py-16">
             <div class="container text-white">
-                projects
+                <h2 class="text-3xl font-bold mb-8 text-[#14ae96] text-center">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <div class="project-card border border-zinc-800 rounded-xl p-6 bg-white/10 flex flex-col gap-3 shadow-lg">
+                        <div class="flex items-center gap-3 mb-2">
+                            <img src="./assets/tools-icon/nextjs.webp" class="h-10 w-10 aspect-auto rounded-lg" alt="Next.js">
+                            <span class="text-lg font-semibold text-white">Portfolio Website</span>
+                        </div>
+                        <p class="text-zinc-300">A modern, responsive portfolio built with Next.js and Tailwind CSS. Features smooth animations, dark mode, and a custom terminal section.</p>
+                        <a href="https://github.com/DipanNama/portfolio-V3" target="_blank" class="text-[#14ae96] font-bold hover:underline">View Code</a>
+                    </div>
+                    <div class="project-card border border-zinc-800 rounded-xl p-6 bg-white/10 flex flex-col gap-3 shadow-lg">
+                        <div class="flex items-center gap-3 mb-2">
+                            <img src="./assets/tools-icon/reactjs.png" class="h-10 w-10 aspect-auto rounded-lg" alt="React.js">
+                            <span class="text-lg font-semibold text-white">Chat Application</span>
+                        </div>
+                        <p class="text-zinc-300">A real-time chat app using React, Node.js, and Socket.io. Includes authentication, group chats, and emoji support.</p>
+                        <a href="https://github.com/DipanNama/chat-app" target="_blank" class="text-[#14ae96] font-bold hover:underline">View Code</a>
+                    </div>
+                    <div class="project-card border border-zinc-800 rounded-xl p-6 bg-white/10 flex flex-col gap-3 shadow-lg">
+                        <div class="flex items-center gap-3 mb-2">
+                            <img src="./assets/tools-icon/firebase.png" class="h-10 w-10 aspect-auto rounded-lg" alt="Firebase">
+                            <span class="text-lg font-semibold text-white">E-commerce Platform</span>
+                        </div>
+                        <p class="text-zinc-300">A scalable e-commerce platform with product search, cart, and payment integration. Built with React, Firebase, and Stripe.</p>
+                        <a href="https://github.com/DipanNama/ecommerce-platform" target="_blank" class="text-[#14ae96] font-bold hover:underline">View Code</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="experience" class="bg-black">
-            <div class="container text-white">
-                experience
+        <div id="experience" class="bg-black py-16">
+            <div class="container mx-auto px-4 text-white flex flex-col items-center">
+                <h2 class="text-3xl font-bold mb-8 text-[#14ae96] text-center">Experience</h2>
+                <div class="w-full max-w-2xl flex flex-col gap-6">
+                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 shadow-lg transition-transform duration-200 hover:scale-[1.03]">
+                        <h3 class="text-xl font-semibold text-[#14ae96]">Frontend Developer (Freelance)</h3>
+                        <p class="text-zinc-300 text-sm mb-2">2022 - Present</p>
+                        <p class="text-white">Worked with multiple clients to build responsive web applications using React, Next.js, and Tailwind CSS. Focused on performance, accessibility, and modern UI/UX.</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 shadow-lg transition-transform duration-200 hover:scale-[1.03]">
+                        <h3 class="text-xl font-semibold text-[#14ae96]">CTF Player & Cybersecurity Enthusiast</h3>
+                        <p class="text-zinc-300 text-sm mb-2">2021 - Present</p>
+                        <p class="text-white">Participated in national and international Capture The Flag competitions, specializing in web security and cryptography challenges.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="services" class="bg-black">
-            <div class="container text-white">
-                services
+        <div id="services" class="bg-black py-16">
+            <div class="container mx-auto px-4 text-white flex flex-col items-center">
+                <h2 class="text-3xl font-bold mb-8 text-[#14ae96] text-center">Services</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-5xl">
+                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 flex flex-col items-center shadow-lg transition-transform duration-200 hover:scale-[1.03]">
+                        <i class="ri-code-s-slash-line text-4xl text-[#14ae96] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Web Development</h3>
+                        <p class="text-zinc-300 text-center">Modern, responsive websites and web apps using React, Next.js, and Tailwind CSS.</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 flex flex-col items-center shadow-lg transition-transform duration-200 hover:scale-[1.03]">
+                        <i class="ri-shield-keyhole-line text-4xl text-[#14ae96] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Cybersecurity Consulting</h3>
+                        <p class="text-zinc-300 text-center">Security audits, vulnerability assessments, and CTF-style training for teams and individuals.</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 flex flex-col items-center shadow-lg transition-transform duration-200 hover:scale-[1.03]">
+                        <i class="ri-lightbulb-flash-line text-4xl text-[#14ae96] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Tech Mentoring</h3>
+                        <p class="text-zinc-300 text-center">Guidance for students and beginners in web development, programming, and cybersecurity.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="contact" class="bg-black">
-            <div class="container text-white">
-                contact
+        <div id="contact" class="bg-black py-16">
+            <div class="container mx-auto px-4 text-white flex flex-col items-center">
+                <h2 class="text-3xl font-bold mb-8 text-[#14ae96] text-center">Contact</h2>
+                <form class="w-full max-w-lg bg-white/10 rounded-xl p-8 border border-zinc-800 flex flex-col gap-4 shadow-lg" action="mailto:dipannama91@gmail.com" method="POST" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required class="rounded p-3 bg-black/60 border border-zinc-700 text-white focus:outline-none focus:border-[#14ae96] placeholder:text-zinc-400" />
+                    <input type="email" name="email" placeholder="Your Email" required class="rounded p-3 bg-black/60 border border-zinc-700 text-white focus:outline-none focus:border-[#14ae96] placeholder:text-zinc-400" />
+                    <textarea name="message" placeholder="Your Message" required rows="4" class="rounded p-3 bg-black/60 border border-zinc-700 text-white focus:outline-none focus:border-[#14ae96] placeholder:text-zinc-400"></textarea>
+                    <button type="submit" class="bg-[#14ae96] text-black font-bold py-3 rounded hover:bg-[#0e8c76] transition">Send Message</button>
+                </form>
+                <div class="flex flex-wrap gap-6 mt-8 text-3xl justify-center">
+                    <a href="https://www.github.com/DipanNama" target="_blank" class="hover:text-[#14ae96]" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+                    <a href="https://www.linkedin.com/in/dipannama" target="_blank" class="hover:text-[#14ae96]" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://www.x.com/dipannama91" target="_blank" class="hover:text-[#14ae96]" aria-label="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
+                    <a href="mailto:dipannama91@gmail.com" class="hover:text-[#14ae96]" aria-label="Email"><i class="ri-mail-line"></i></a>
+                </div>
             </div>
         </div>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" aria-label="Toggle Theme" class="fixed bottom-6 right-6 z-50 text-2xl rounded-full p-3 border border-zinc-700 bg-black/30 text-[#14ae96] hover:bg-[#14ae96] hover:text-black transition duration-300 focus:outline-none shadow-lg backdrop-blur-md">
+            <i id="theme-toggle-icon" class="ri-moon-line"></i>
+        </button>
     </main>
     <script src="./js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery"></script>

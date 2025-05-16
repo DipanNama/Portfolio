@@ -1,0 +1,246 @@
+/* Terminal UI Styling */
+.terminal-container {
+    background-color: var(--terminal-bg, #0a0a0a);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.terminal-header {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-dot.red {
+    background-color: #ff5f56;
+}
+
+.terminal-dot.yellow {
+    background-color: #ffbd2e;
+}
+
+.terminal-dot.green {
+    background-color: #27c93f;
+}
+
+.terminal-title {
+    color: #aaa;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.terminal-body {
+    padding: 15px;
+    flex-grow: 1;
+    overflow-y: auto;
+    color: var(--terminal-text, #f0f0f0);
+    line-height: 1.5;
+}
+
+.terminal-prompt {
+    color: #14ae96;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.terminal-command {
+    color: white;
+    font-weight: normal;
+}
+
+.terminal-output {
+    margin: 10px 0;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.terminal-input-line {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: #14ae96;
+    margin-left: 1px;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Code block styling */
+.code-block {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    overflow-x: auto;
+    position: relative;
+    border-left: 3px solid #14ae96;
+}
+
+.code-block-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+}
+
+.code-block-language {
+    color: #14ae96;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.code-block-copy {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 12px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.code-block-copy:hover {
+    color: #14ae96;
+}
+
+.code-content {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.code-content .keyword {
+    color: #ff7b72;
+}
+
+.code-content .string {
+    color: #a5d6ff;
+}
+
+.code-content .comment {
+    color: #8b949e;
+    font-style: italic;
+}
+
+.code-content .function {
+    color: #d2a8ff;
+}
+
+.code-content .variable {
+    color: #ffa657;
+}
+
+/* Animations for terminal typing effect */
+.typing-animation {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #14ae96;
+    width: 0;
+    animation: typing 2s steps(30) forwards, blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Term.js overrides and customizations */
+.terminal {
+    --background: var(--terminal-bg, #0a0a0a) !important;
+    --color: var(--terminal-text, #f0f0f0) !important;
+    border: none !important;
+    padding: 10px 15px !important;
+    font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+    line-height: 1.5 !important;
+    font-size: 14px !important;
+}
+
+.terminal .terminal-output div span {
+    font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+}
+
+.terminal .cmd .cursor {
+    background-color: #14ae96 !important;
+    color: black !important;
+}
+
+.terminal .cmd {
+    margin-bottom: 10px !important;
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff5f56;
+}
+
+.yellow {
+    background-color: #ffbd2e;
+}
+
+.green {
+    background-color: #27c93f;
+}
+
+.header-title {
+    color: #aaa;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.terminal-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+}
