@@ -2,7 +2,6 @@ const font = 'RubiFont';
 figlet.defaults({ fontPath: 'https://unpkg.com/figlet/fonts/' });
 figlet.preloadFonts([font], ready);
 
-
 const formatter = new Intl.ListFormat('en', {
     style: 'long',
     type: 'conjunction',
@@ -10,21 +9,91 @@ const formatter = new Intl.ListFormat('en', {
 
 const url = 'https://v2.jokeapi.dev/joke/Programming';
 
-const data = [
-    about = 'My name is Dipan Nama. I am a passionate frontend developer, programmer, CTF player & student from India. I am currently pursuing my MCA from The ICFAI University, Tripura.',
-    skills = 'I am skilled in HTML, CSS, JavaScript, React.js, Redux, Node.js, Express.js, MongoDB, Python, Django, C, C++, Java, SQL, Git, Docker, Linux, etc.',
-    projects = 'I have worked on various projects like E-commerce website, Blog website, Portfolio website, Chat application, etc.',
-    education = 'I have completed my BCA from The ICFAI University, Tripura. Currently, I am pursuing my MCA from the same university.',
-    contact = 'You can contact me on my email id: dipannama91@gmail.com',
-    resume = 'You can download my resume from here: [Resume](https://drive.google.com/file/...)',
-];
+// Terminal data with markdown and code snippets
+const data = {
+    about: `I'm Dipan Nama, a passionate frontend developer, programmer, CTF player & student from India.
+Currently pursuing my MCA from The ICFAI University, Tripura.
 
-const socials = [
-    Email = 'Email: dipannama91@gmail.com',
-    LinkedIn = 'LinkedIn: [Dipan Nama](https://www.linkedin.com/in/dipannama)',
-    GitHub = 'GitHub: [Dipan Nama](https://www.github.com/DipanNama)',
-    Twitter = 'Twitter: [Dipan Nama](https://www.twitter.com/dipannama)',
-];
+[[b;#14ae96;]Interests:]
+- Web Development
+- Cybersecurity
+- Competitive Programming
+- Open Source Contributions`,
+
+    skills: `[[b;#14ae96;]Frontend:]
+- HTML, CSS, JavaScript, TypeScript
+- React.js, Next.js, Redux
+- Tailwind CSS, SASS
+
+[[b;#14ae96;]Backend:]
+- Node.js, Express.js
+- MongoDB, Firebase
+- RESTful APIs
+
+[[b;#14ae96;]Tools & Others:]
+- Git, GitHub
+- Docker, Linux
+- Burp Suite
+- Problem Solving`,
+
+    projects: `[[b;#14ae96;]Recent Projects:]
+
+1. [[b;white;]Portfolio Website]
+   Tech: Next.js, Tailwind CSS
+   \`\`\`javascript
+   // Theme toggle from my portfolio
+   function setTheme(theme) {
+     document.body.classList.add(theme);
+     document.body.classList.remove(theme === 'light' ? 'dark' : 'light');
+     localStorage.setItem('theme', theme);
+   }
+   \`\`\`
+
+2. [[b;white;]Chat Application]
+   Tech: React.js, Socket.io, Node.js
+   \`\`\`javascript
+   // Real-time messaging with Socket.io
+   socket.on('message', (data) => {
+     setMessages(prev => [...prev, data]);
+     scrollToBottom();
+   });
+   \`\`\`
+
+3. [[b;white;]E-commerce Platform]
+   Tech: React, Firebase, Stripe
+   \`\`\`javascript
+   // Product search functionality
+   const filteredProducts = products.filter(product => 
+     product.name.toLowerCase().includes(searchTerm.toLowerCase())
+   );
+   \`\`\``,
+
+    education: `[[b;#14ae96;]Education:]
+
+- Master of Computer Applications (MCA)
+  [[i;white;]The ICFAI University, Tripura] | Present
+
+- Bachelor of Computer Applications (BCA)
+  [[i;white;]The ICFAI University, Tripura] | Completed`,
+
+    contact: `[[b;#14ae96;]Contact Information:]
+
+- [[b;white;]Email:] dipannama91@gmail.com
+- [[b;white;]LinkedIn:] https://www.linkedin.com/in/dipannama
+- [[b;white;]GitHub:] https://www.github.com/DipanNama
+- [[b;white;]Twitter:] https://www.twitter.com/dipannama91
+
+Feel free to reach out for freelance projects, collaborations, or just to say hi!`,
+
+    resume: `You can download my resume from here: [Resume](https://drive.google.com/file/...)`,
+};
+
+const socials = {
+    Email: 'dipannama91@gmail.com',
+    LinkedIn: 'https://www.linkedin.com/in/dipannama',
+    GitHub: 'https://www.github.com/DipanNama',
+    Twitter: 'https://www.twitter.com/dipannama91'
+};
 
 const files = [
     'about.txt',
@@ -35,17 +104,19 @@ const files = [
 
 const dirs = ['experiences', 'projects', 'services'];
 
-
+// Enhanced help menu with syntax highlighting
 const help_details = [
-    '[[b;white;]About]\n\t- Stop Stalking me',
-    '[[b;white;]Skills]\n\t- List of my skills',
-    '[[b;white;]Projects]\n\t- List of my projects',
-    '[[b;white;]Education]\n\t- My educational background',
-    '[[b;white;]Contact]\n\t- Contact me',
-    '[[b;white;]Resume]\n\t- Download my resume',
-    // '[[b;white;]Joke]\n\t- Tell a joke',
-    '[[b;white;]Clear]\n\t- Clear the terminal',
-    // '[[b;white;]Help]\n\t- Show this help message'
+    '[[b;#14ae96;]Available Commands:]',
+    '  [[b;white;]about] - About me and my interests',
+    '  [[b;white;]skills] - My technical skills',
+    '  [[b;white;]projects] - View my projects with code samples',
+    '  [[b;white;]education] - My educational background',
+    '  [[b;white;]contact] - Contact information',
+    '  [[b;white;]joke] - Hear a programming joke',
+    '  [[b;white;]clear] - Clear the terminal',
+    '  [[b;white;]help] - Show this help message',
+    '',
+    'Type [[b;white;]<command>] to execute'
 ];
 
 
@@ -53,38 +124,38 @@ const help_details = [
 const commands = {
     about() {
         term.clear();
-        term.echo(data[0], { typing: true, delay: 40 });
+        term.echo(data.about, { typing: true, delay: 30 });
     },
     skills() {
         term.clear();
-        term.echo(data[1], { typing: true, delay: 40 });
+        term.echo(data.skills, { typing: true, delay: 30 });
     },
     projects() {
         term.clear();
-        term.echo(data[2], { typing: true, delay: 40 });
+        term.echo(data.projects, { typing: true, delay: 30, formatters: true });
     },
     education() {
         term.clear();
-        term.echo(data[3], { typing: true, delay: 40 });
+        term.echo(data.education, { typing: true, delay: 30 });
     },
     contact() {
         term.clear();
-        term.echo(data[4], { typing: true, delay: 40 });
+        term.echo(data.contact, { typing: true, delay: 30 });
     },
     resume() {
         term.clear();
-        term.echo(data[5], { typing: true, delay: 40 });
+        term.echo(data.resume, { typing: true, delay: 30 });
     },
     clear() {
         term.clear();
     },
     help() {
         term.clear();
-        term.echo(`[[b;white;]Type 'all' to see the full help menu.\n${help_details.join('\n')}`, { typing: true, delay: 40 });
+        term.echo(help_details.join('\n'), { typing: true, delay: 20 });
     },
     all() {
         term.clear();
-        term.echo(`Availale commands : ${help}`, { typing: true, delay: 40 });
+        term.echo(`Available commands: ${help}`, { typing: true, delay: 30 });
     },
     cat(file) {
         if (file in files) {
@@ -94,11 +165,10 @@ const commands = {
         }
     },
     echo(...args) {
-        // term.clear();
-        term.echo(args.join(' '), { typing: true, delay: 40 });
+        term.echo(args.join(' '), { typing: true, delay: 30 });
     },
     rainbow(...args) {
-        term.echo(rainbow(args.join(' '), { typing: true, delay: 40 }));
+        term.echo(rainbow(args.join(' '), { typing: true, delay: 30 }));
     },
     cd(dir = null) {
         if (dir === null || (dir === '..' && cwd !== root)) {
@@ -111,10 +181,9 @@ const commands = {
         } else if (dirs.includes(dir)) {
             cwd = root + '/' + dir;
         } else {
-            this.error('Wrong directory');
+            this.error('Directory not found: ' + dir);
         }
     },
-
     ls(dir = null) {
         term.clear();
         if (dir) {
@@ -149,29 +218,55 @@ const commands = {
         }
     },
     async joke() {
-        const res = await fetch(url);
-        const data = await res.json();
-        if (data.type == 'twopart') {
-            this.animation(async () => {
-                await this.echo(`Q: ${data.setup}`, {
-                    delay: 50,
+        try {
+            term.echo('Fetching a programming joke...', { typing: true, delay: 30 });
+            const res = await fetch(url);
+            const data = await res.json();
+            if (data.type == 'twopart') {
+                this.animation(async () => {
+                    await this.echo(`[[b;#14ae96;]Q:] ${data.setup}`, {
+                        delay: 40,
+                        typing: true
+                    });
+                    await this.echo(`[[b;#14ae96;]A:] ${data.delivery}`, {
+                        delay: 40,
+                        typing: true
+                    });
+                });
+            } else if (data.type === 'single') {
+                this.echo(data.joke, {
+                    delay: 40,
                     typing: true
                 });
-                await this.echo(`A: ${data.delivery}`, {
-                    delay: 50,
-                    typing: true
-                });
-            });
-        } else if (data.type === 'single') {
-            this.echo(data.joke, {
-                delay: 50,
-                typing: true
-            });
+            }
+        } catch (error) {
+            this.error('Failed to fetch joke. Try again later.');
         }
     },
     reset() {
         term.clear();
         ready();
+    },
+    socials() {
+        term.clear();
+        term.echo('[[b;#14ae96;]Connect with me:]', { typing: true, delay: 30 });
+        Object.entries(socials).forEach(([platform, url]) => {
+            term.echo(`[[b;white;]${platform}:] ${url}`, { typing: true, delay: 20 });
+        });
+    },
+    whoami() {
+        term.echo('[[b;white;]dipan@portfolio:~$] You are a visitor exploring my terminal portfolio!', 
+            { typing: true, delay: 30 });
+    },
+    date() {
+        const now = new Date();
+        term.echo(`Current date: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`, 
+            { typing: true, delay: 30 });
+    },
+    // Easter egg
+    konami() {
+        term.echo(rainbow(render('LEVEL UP!')), { typing: false });
+        term.echo('You found a secret command! +100 geek points.', { typing: true, delay: 30 });
     }
 };
 
@@ -346,13 +441,20 @@ term.blur();
 function ready() {
     term.echo(() => rainbow(render('Dipan Nama')), { ansi: true }).echo()
         .echo('[[;white;]Welcome to my Terminal Portfolio!]').resume();
-    term.echo(`<big>Type 'help' to see the help menu</big>\n`);
-    // term.echo('[jQuery Terminal](https://terminal.jcubic.pl/)');
-    // term.echo('[[;red;]hello world]');
-    term.exec('echo Welcome!', { typing: true, delay: 50 });
-    // term.set_prompt("data: ", { typing: true, delay: 200 });
-    // term.enter("enterkey", { typing: true, delay: 200 });
-    // term.on('mouseover', function() {
-    //     term.exec('echo Welcome!', { typing: true, delay: 50 });
-    // });
+    
+    // Enhanced intro message with code styling
+    term.echo(`
+[[b;#14ae96;]$ whoami]
+[[;white;]> Dipan Nama - Frontend Developer & CTF Player]
+
+[[b;#14ae96;]$ cat welcome.txt]
+[[;white;]> Welcome to my interactive terminal. Type 'help' to see available commands.]
+
+[[b;#14ae96;]$ _]
+`, { typing: true, delay: 20 });
+    
+    // Make terminal more visible and interactive
+    setTimeout(() => {
+        term.focus();
+    }, 1000);
 }
