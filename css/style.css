@@ -80,39 +80,120 @@ a{
     }
 }
 
-/* Theme Styles */
+/* Enhanced Theme Styles with rich variables */
 :root {
+    /* Base colors */
     --bg-primary: white;
     --bg-secondary: #f8f8f8;
     --text-primary: black;
     --text-secondary: #333;
-    --accent-color: #14ae96;
+    
+    /* Accent colors */
+    --accent-primary: #14ae96;
+    --accent-secondary: #8b5cf6;
+    --accent-gradient: linear-gradient(90deg, #14ae96, #8b5cf6);
+    
+    /* UI elements */
     --border-color: #e0e0e0;
     --card-bg: #f0f0f0;
+    --card-hover-shadow: rgba(20, 174, 150, 0.2);
+    
+    /* Terminal specific */
     --terminal-bg: #1a1a1a;
     --terminal-text: #f0f0f0;
+    
+    /* Transitions */
+    --transition-speed: 0.3s;
+    --transition-function: ease;
 }
 
-:root.dark {
+:root.dark, .dark {
+    /* Base colors */
     --bg-primary: black;
     --bg-secondary: #111;
     --text-primary: white;
     --text-secondary: #f0f0f0;
-    --accent-color: #14ae96;
+    
+    /* UI elements */
     --border-color: #333;
-    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-hover-shadow: rgba(20, 174, 150, 0.2);
+    
+    /* Terminal specific */
     --terminal-bg: #0a0a0a;
+    --terminal-text: #f0f0f0;
+}
+
+:root.light, .light {
+    /* Base colors */
+    --bg-primary: white;
+    --bg-secondary: #f8f8f8;
+    --text-primary: #121212;
+    --text-secondary: #333;
+    
+    /* UI elements */
+    --border-color: #e0e0e0;
+    --card-bg: #f0f0f0;
+    --card-hover-shadow: rgba(20, 174, 150, 0.2);
+    
+    /* Terminal specific */
+    --terminal-bg: #1a1a1a;
     --terminal-text: #f0f0f0;
 }
 
 .dark {
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    transition: background-color var(--transition-speed) var(--transition-function),
+                color var(--transition-speed) var(--transition-function);
 }
 
 .light {
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    transition: background-color var(--transition-speed) var(--transition-function),
+                color var(--transition-speed) var(--transition-function);
+}
+
+/* Theme transition helpers */
+.theme-transition {
+    transition: background-color var(--transition-speed) var(--transition-function),
+                color var(--transition-speed) var(--transition-function),
+                border-color var(--transition-speed) var(--transition-function),
+                box-shadow var(--transition-speed) var(--transition-function);
+}
+
+/* Project button animations */
+.project-btn {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.project-btn .btn-bg {
+    background: var(--accent-gradient);
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0; /* Ensure it starts from the left */
+    top: 0;
+    opacity: 0.9;
+    transition: width 0.3s ease;
+    transform-origin: left center; /* Ensure transform starts from the left */
+}
+
+.project-btn:hover .btn-bg {
+    width: 100%;
+}
+
+/* Message blocks - hidden on mobile, visible on larger screens */
+.msg-block {
+    display: none; /* Hidden by default on mobile */
+}
+
+@media (min-width: 640px) {
+    .msg-block {
+        display: block; /* Show on screens larger than 640px (sm breakpoint) */
+    }
 }
 
 #msg-block1 {
@@ -123,11 +204,9 @@ a{
     animation: updown2 9s infinite;
 }
 
-
 #msg-block3 {
     animation: updown3 8s infinite;
 }
-
 
 #msg-block4 {
     animation: updown4 9s infinite;

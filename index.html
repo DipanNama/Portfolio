@@ -15,8 +15,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" />
 </head>
 
-<body>
-    <main id="main" class="overflow-x-hidden z-[-5]">
+<body class="bg-black">
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <main id="main" class="overflow-x-hidden z-[-5]">
 
         <!-- <div class="page-loading bg-red-500 z-[5] h-screen w-screen hidden"></div> -->
         <!-- Home Page -->
@@ -168,7 +170,7 @@
                     <div class="z-[2] flex flex-col gap-4 sm:flex-row sm:gap-0 sm:justify-between items-center w-full px-2 sm:px-0">
                         <!-- Message Block 1: Terminal with Code Snippet -->
                         <div id="msg-block1"
-                            class="msg-block w-full sm:w-[320px] h-auto bg-[#0d1117]/90 rounded-xl relative sm:absolute top-0 left-0 sm:top-[20%] sm:left-[30%] sm:translate-x-[-50%] sm:translate-y-[-50%] mb-2 sm:mb-0 border border-zinc-800 overflow-hidden shadow-lg">
+                            class="msg-block w-[320px] h-auto bg-[#0d1117]/90 rounded-xl absolute top-[20%] left-[30%] translate-x-[-50%] translate-y-[-50%] border border-zinc-800 overflow-hidden shadow-lg">
                             <div class="terminal-header px-3 py-2 flex items-center">
                                 <div class="terminal-dots">
                                     <div class="terminal-dot red"></div>
@@ -187,7 +189,7 @@
                         
                         <!-- Message Block 2: Terminal with Quote -->
                         <div id="msg-block2"
-                            class="msg-block w-full sm:w-[320px] h-auto bg-[#0d1117]/90 rounded-xl relative sm:absolute top-0 right-0 sm:top-[30%] sm:right-[5%] sm:translate-x-[-50%] sm:translate-y-[-50%] mb-2 sm:mb-0 border border-zinc-800 overflow-hidden shadow-lg">
+                            class="msg-block w-[320px] h-auto bg-[#0d1117]/90 rounded-xl absolute top-[30%] right-[5%] translate-x-[-50%] translate-y-[-50%] border border-zinc-800 overflow-hidden shadow-lg">
                             <div class="terminal-header px-3 py-2 flex items-center">
                                 <div class="terminal-dots">
                                     <div class="terminal-dot red"></div>
@@ -207,7 +209,7 @@
                         
                         <!-- Message Block 3: Terminal with CTF -->
                         <div id="msg-block3"
-                            class="msg-block w-full sm:w-[320px] h-auto bg-[#0d1117]/90 rounded-xl relative sm:absolute top-0 left-0 sm:top-[75%] sm:left-[10%] sm:translate-x-[-50%] sm:translate-y-[-50%] mb-2 sm:mb-0 border border-zinc-800 overflow-hidden shadow-lg">
+                            class="msg-block w-[320px] h-auto bg-[#0d1117]/90 rounded-xl absolute top-[75%] left-[10%] translate-x-[-50%] translate-y-[-50%] border border-zinc-800 overflow-hidden shadow-lg">
                             <div class="terminal-header px-3 py-2 flex items-center">
                                 <div class="terminal-dots">
                                     <div class="terminal-dot red"></div>
@@ -226,7 +228,7 @@
                         
                         <!-- Message Block 4: Terminal with Skills -->
                         <div id="msg-block4"
-                            class="msg-block w-full sm:w-[320px] h-auto bg-[#0d1117]/90 rounded-xl relative sm:absolute top-0 right-0 sm:top-[85%] sm:right-[15%] sm:translate-x-[-50%] sm:translate-y-[-50%] border border-zinc-800 overflow-hidden shadow-lg">
+                            class="msg-block w-[320px] h-auto bg-[#0d1117]/90 rounded-xl absolute top-[85%] right-[15%] translate-x-[-50%] translate-y-[-50%] border border-zinc-800 overflow-hidden shadow-lg">
                             <div class="terminal-header px-3 py-2 flex items-center">
                                 <div class="terminal-dots">
                                     <div class="terminal-dot red"></div>
@@ -246,8 +248,6 @@
                         </div>
                     </div>
 
-                    <img src="./assets/clickhere.gif" class="scale-x-[-1] absolute bottom-[-20vh] left-[20vw]"
-                        alt="arrow">
                 </div>
 
             </div>
@@ -255,50 +255,48 @@
         </div>
 
         <!-- About Page -->
-        <div id="about" class="bg-black">
-            <div class="container text-white flex flex-col md:flex-row gap-8 md:gap-12 justify-between items-stretch p-4 md:p-8 xl:p-12 max-w-7xl mx-auto">
-                <!-- About page code block -->
-                <div id="terminal"
-                    class="terminal-container dark hidden sm:flex flex-col flex-1 min-w-0 rounded-xl bg-black text-white border border-zinc-800 rounded-2xl justify-center items-center relative">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
-                        </div>
-                        <span class="terminal-title">Terminal — Dipan Nama</span>
-                        <span class="header-icon"><i class="ri-terminal-box-line"></i></span>
-                    </div>
-                    <hr class="terminal-divider" />
-                    <div class="terminal-output w-full">
-                        <!-- Terminal content rendered by JS -->
-                    </div>
-                </div>
-                <!-- About page info block -->
-                <div class="right flex flex-1 min-w-0 border flex-col gap-3 justify-center p-5 border-zinc-800 rounded-2xl">
+        <div id="about" class="bg-black mt-32">
+            <div class="container text-white flex flex-col gap-8 md:gap-12 justify-center items-stretch px-4 md:px-16 xl:px-32 max-w-5xl mx-auto">
+                <!-- About page info block (full width) -->
+                <div class="right flex flex-col gap-3 justify-center p-8 border border-zinc-800 rounded-2xl bg-black hover:shadow-lg hover:shadow-[#14ae9633] transition-all duration-300 w-full" data-speed="0.9">
                     <div class="info flex flex-col justify-center items-center">
-                        <h1 class="text-[#14ae96] text-3xl md:text-4xl font-bold">About Me</h1>
-                        <p class="text-white text-base md:text-lg mt-5 text-center">Hi, My name is
-                            <span class="text-[#14ae96] font-bold"> Dipan Nama.</span>
+                        <h1 class="text-[#14ae96] text-3xl md:text-4xl font-bold relative">
+                            About Me
+                            <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-20 bg-[#14ae96] rounded-full"></span>
+                        </h1>
+                        <p class="text-white text-base md:text-lg mt-8 text-center">Hi, I'm 
+                            <span class="text-[#14ae96] font-bold"> Dipan Nama</span>
                         </p>
-                        <p class="text-white text-sm md:text-md text-center">
-                            I'm a passionate frontend developer, programmer, CTF player & student from India.
+                        <p class="text-white text-sm md:text-md mt-2 text-center leading-relaxed">
+                            A passionate frontend developer with a strong interest in crafting user-centric digital experiences. 
+                            I specialize in building modern, responsive web applications using React.js, Next.js, and Tailwind CSS.
                         </p>
-                        <p class="text-white text-sm md:text-md text-center">
-                            I'm currently pursuing my MCA from The ICFAI University, Tripura.
+                        <p class="text-white text-sm md:text-md mt-2 text-center leading-relaxed">
+                            Beyond coding, I'm an avid CTF player, constantly sharpening my cybersecurity skills
+                            and approaching problems with both analytical and creative thinking.
+                            Currently pursuing my MCA from The ICFAI University, Tripura.
                         </p>
                     </div>
-                    <div class="flex flex-wrap justify-evenly items-center gap-4 my-4 w-full">
-                        <div class="flex flex-col items-center min-w-[100px] flex-1">
-                            <p class="text-[#14ae96] text-2xl md:text-4xl font-bold">03+</p>
+                    <div class="flex flex-wrap justify-evenly items-center gap-4 my-6 w-full">
+                        <div class="flex flex-col items-center min-w-[100px] flex-1 group">
+                            <div class="relative overflow-hidden">
+                                <p class="text-[#14ae96] text-2xl md:text-4xl font-bold transition-all duration-300 group-hover:scale-110">03+</p>
+                                <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#14ae96] group-hover:w-full transition-all duration-300"></div>
+                            </div>
                             <p class="font-bold mt-2 text-xs md:text-base">Years Experience</p>
                         </div>
-                        <div class="flex flex-col items-center min-w-[100px] flex-1">
-                            <p class="text-[#14ae96] text-2xl md:text-4xl font-bold">15+</p>
+                        <div class="flex flex-col items-center min-w-[100px] flex-1 group">
+                            <div class="relative overflow-hidden">
+                                <p class="text-[#14ae96] text-2xl md:text-4xl font-bold transition-all duration-300 group-hover:scale-110">15+</p>
+                                <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#14ae96] group-hover:w-full transition-all duration-300"></div>
+                            </div>
                             <p class="font-bold mt-2 text-xs md:text-base">Projects Created</p>
                         </div>
-                        <div class="flex flex-col items-center min-w-[100px] flex-1">
-                            <p class="text-[#14ae96] text-2xl md:text-4xl font-bold">05+</p>
+                        <div class="flex flex-col items-center min-w-[100px] flex-1 group">
+                            <div class="relative overflow-hidden">
+                                <p class="text-[#14ae96] text-2xl md:text-4xl font-bold transition-all duration-300 group-hover:scale-110">05+</p>
+                                <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#14ae96] group-hover:w-full transition-all duration-300"></div>
+                            </div>
                             <p class="font-bold mt-2 text-xs md:text-base">Completed Works</p>
                         </div>
                     </div>
@@ -316,209 +314,406 @@
                 </div>
             </div>
             <div class="flex justify-center items-center mt-4">
-                <a href="#technologies" class="scroll-btn animate-bounce text-[#8b5cf6] h-fit w-fit">
+                <a href="#projects" class="scroll-btn animate-bounce text-[#8b5cf6] h-fit w-fit">
                     <i class="ri-arrow-down-s-line text-4xl"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Skills Section -->
-        <div id="technologies" class="bg-black pt-16 pb-8">
-            <div class="container flex flex-col gap-10 justify-center items-center">
-                <div class="heading text-white flex flex-row gap-5 justify-center items-center p-5">
-                    <span class="text-3xl font-bold mb-2 text-[#14ae96]">My Skills</span>
-                </div>
-                
-                <!-- Frontend Skills -->
-                <div class="w-full">
-                    <h3 class="text-xl font-semibold mb-4 text-white text-center">Frontend</h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/html.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="HTML">
-                            <span class="text-white text-sm text-center">HTML</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/css-3.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="CSS">
-                            <span class="text-white text-sm text-center">CSS</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/java-script.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="JavaScript">
-                            <span class="text-white text-sm text-center">JavaScript</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/reactjs.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="React.js">
-                            <span class="text-white text-sm text-center">React.js</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/nextjs.webp" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Next.js">
-                            <span class="text-white text-sm text-center">Next.js</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/tailwind.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Tailwind">
-                            <span class="text-white text-sm text-center">Tailwind CSS</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Backend Skills -->
-                <div class="w-full">
-                    <h3 class="text-xl font-semibold mb-4 text-white text-center">Backend & Tools</h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/nodejs.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Node.js">
-                            <span class="text-white text-sm text-center">Node.js</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/express.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Express.js">
-                            <span class="text-white text-sm text-center">Express.js</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/mongodb.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="MongoDB">
-                            <span class="text-white text-sm text-center">MongoDB</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/firebase.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Firebase">
-                            <span class="text-white text-sm text-center">Firebase</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/typescript.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="TypeScript">
-                            <span class="text-white text-sm text-center">TypeScript</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/python.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Python">
-                            <span class="text-white text-sm text-center">Python</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- DevOps & Other Skills -->
-                <div class="w-full">
-                    <h3 class="text-xl font-semibold mb-4 text-white text-center">DevOps & Others</h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/github.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="GitHub">
-                            <span class="text-white text-sm text-center">GitHub</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/docker.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Docker">
-                            <span class="text-white text-sm text-center">Docker</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/linux.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Linux">
-                            <span class="text-white text-sm text-center">Linux</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/burpsuite.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Burp Suite">
-                            <span class="text-white text-sm text-center">Burp Suite</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/gnu-bash.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="Bash">
-                            <span class="text-white text-sm text-center">Bash</span>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-4 border border-zinc-800 flex flex-col items-center">
-                            <img src="./assets/tools-icon/wordpress.png" class="h-12 w-12 aspect-auto rounded-lg mb-2" alt="WordPress">
-                            <span class="text-white text-sm text-center">WordPress</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Projects Page -->
-        <div id="projects" class="bg-black py-16">
-            <div class="container text-white">
+        <div id="projects" class="bg-gradient-to-b from-black to-[#0a1a1a] py-16">
+            <div class="container text-white px-4 md:px-16 xl:px-32 max-w-7xl mx-auto">
                 <h2 class="text-3xl font-bold mb-8 text-[#14ae96] text-center">Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                    <div class="project-card border border-zinc-800 rounded-xl p-6 bg-white/10 flex flex-col gap-3 shadow-lg">
-                        <div class="flex items-center gap-3 mb-2">
-                            <img src="./assets/tools-icon/nextjs.webp" class="h-10 w-10 aspect-auto rounded-lg" alt="Next.js">
-                            <span class="text-lg font-semibold text-white">Portfolio Website</span>
+                    <div class="project-card border border-zinc-800 rounded-xl p-6 bg-black flex flex-col gap-3 shadow-lg hover:shadow-[#14ae9633] hover:border-[#14ae9650] relative group transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#14ae9610] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="flex items-center gap-3 mb-2 relative z-10">
+                            <div class="relative rounded-lg p-1 bg-black transform transition-all duration-300 group-hover:scale-110">
+                                <div class="bg-black p-1 rounded-lg">
+                                    <img src="./assets/tools-icon/nextjs.webp" class="h-8 w-8 aspect-auto" alt="Next.js">
+                                </div>
+                            </div>
+                            <span class="text-lg font-semibold text-white group-hover:text-[#14ae96] transition-colors duration-300">Portfolio Website</span>
                         </div>
-                        <p class="text-zinc-300">A modern, responsive portfolio built with Next.js and Tailwind CSS. Features smooth animations, dark mode, and a custom terminal section.</p>
-                        <a href="https://github.com/DipanNama/portfolio-V3" target="_blank" class="text-[#14ae96] font-bold hover:underline">View Code</a>
+                        <p class="text-zinc-300 group-hover:text-white transition-colors duration-300 relative z-10">A modern, responsive portfolio built with Next.js and Tailwind CSS. Features smooth animations, dark mode, and a custom terminal section.</p>
+                        <a href="https://github.com/DipanNama/portfolio-V3" target="_blank" class="project-btn w-fit px-4 py-1.5 mt-2 rounded-full text-white font-bold relative overflow-hidden flex items-center gap-2 border border-transparent hover:border-[#14ae9650] transition-all duration-300">
+                            <span class="btn-bg"></span>
+                            <span class="btn-text relative z-10">View Code</span>
+                            <i class="ri-github-fill relative z-10"></i>
+                        </a>
                     </div>
-                    <div class="project-card border border-zinc-800 rounded-xl p-6 bg-white/10 flex flex-col gap-3 shadow-lg">
-                        <div class="flex items-center gap-3 mb-2">
-                            <img src="./assets/tools-icon/reactjs.png" class="h-10 w-10 aspect-auto rounded-lg" alt="React.js">
-                            <span class="text-lg font-semibold text-white">Chat Application</span>
+                    <div class="project-card border border-zinc-800 rounded-xl p-6 bg-black flex flex-col gap-3 shadow-lg hover:shadow-[#14ae9633] hover:border-[#14ae9650] relative group transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#14ae9610] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="flex items-center gap-3 mb-2 relative z-10">
+                            <div class="relative rounded-lg p-1 bg-black transform transition-all duration-300 group-hover:scale-110">
+                                <div class="bg-black p-1 rounded-lg">
+                                    <img src="./assets/tools-icon/reactjs.png" class="h-8 w-8 aspect-auto" alt="React.js">
+                                </div>
+                            </div>
+                            <span class="text-lg font-semibold text-white group-hover:text-[#14ae96] transition-colors duration-300">Chat Application</span>
                         </div>
-                        <p class="text-zinc-300">A real-time chat app using React, Node.js, and Socket.io. Includes authentication, group chats, and emoji support.</p>
-                        <a href="https://github.com/DipanNama/chat-app" target="_blank" class="text-[#14ae96] font-bold hover:underline">View Code</a>
+                        <p class="text-zinc-300 group-hover:text-white transition-colors duration-300 relative z-10">A real-time chat app using React, Node.js, and Socket.io. Includes authentication, group chats, and emoji support.</p>
+                        <a href="https://github.com/DipanNama/chat-app" target="_blank" class="project-btn w-fit px-4 py-1.5 mt-2 rounded-full text-white font-bold relative overflow-hidden flex items-center gap-2 border border-transparent hover:border-[#14ae9650] transition-all duration-300">
+                            <span class="btn-text relative z-10">View Code</span>
+                            <i class="ri-github-fill relative z-10"></i>
+                            <span class="btn-bg absolute inset-0 bg-gradient-to-r from-[#14ae96] to-[#14ae9680] w-0 h-full transition-all duration-300"></span>
+                        </a>
                     </div>
-                    <div class="project-card border border-zinc-800 rounded-xl p-6 bg-white/10 flex flex-col gap-3 shadow-lg">
-                        <div class="flex items-center gap-3 mb-2">
-                            <img src="./assets/tools-icon/firebase.png" class="h-10 w-10 aspect-auto rounded-lg" alt="Firebase">
-                            <span class="text-lg font-semibold text-white">E-commerce Platform</span>
+                    <div class="project-card border border-zinc-800 rounded-xl p-6 bg-black flex flex-col gap-3 shadow-lg hover:shadow-[#14ae9633] hover:border-[#14ae9650] relative group transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#14ae9610] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="flex items-center gap-3 mb-2 relative z-10">
+                            <div class="relative rounded-lg p-1 bg-black transform transition-all duration-300 group-hover:scale-110">
+                                <div class="bg-black p-1 rounded-lg">
+                                    <img src="./assets/tools-icon/firebase.png" class="h-8 w-8 aspect-auto" alt="Firebase">
+                                </div>
+                            </div>
+                            <span class="text-lg font-semibold text-white group-hover:text-[#14ae96] transition-colors duration-300">E-commerce Platform</span>
                         </div>
-                        <p class="text-zinc-300">A scalable e-commerce platform with product search, cart, and payment integration. Built with React, Firebase, and Stripe.</p>
-                        <a href="https://github.com/DipanNama/ecommerce-platform" target="_blank" class="text-[#14ae96] font-bold hover:underline">View Code</a>
+                        <p class="text-zinc-300 group-hover:text-white transition-colors duration-300 relative z-10">A scalable e-commerce platform with product search, cart, and payment integration. Built with React, Firebase, and Stripe.</p>
+                        <a href="https://github.com/DipanNama/ecommerce-platform" target="_blank" class="project-btn w-fit px-4 py-1.5 mt-2 rounded-full text-white font-bold relative overflow-hidden flex items-center gap-2 border border-transparent hover:border-[#14ae9650] transition-all duration-300">
+                            <span class="btn-text relative z-10">View Code</span>
+                            <i class="ri-github-fill relative z-10"></i>
+                            <span class="btn-bg absolute inset-0 bg-gradient-to-r from-[#14ae96] to-[#14ae9680] w-0 h-full transition-all duration-300"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center items-center mt-4">
+                <a href="#technologies" class="scroll-btn animate-bounce text-[#8b5cf6] h-fit w-fit">
+                    <i class="ri-arrow-down-s-line text-4xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Skills Section -->
+        <div id="technologies" class="bg-black pt-16 pb-8">
+            <div class="container flex flex-col gap-10 justify-center items-center px-4 md:px-16 xl:px-32 max-w-7xl mx-auto">
+                <div class="heading text-white flex flex-col gap-2 justify-center items-center p-5">
+                    <span class="text-3xl font-bold text-[#14ae96] relative">
+                        My Skills
+                        <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-20 bg-[#14ae96] rounded-full"></span>
+                    </span>
+                    <p class="text-zinc-400 mt-6 text-center max-w-2xl">
+                        A collection of technologies and tools I use to bring ideas to life.
+                        I continuously expand my skillset to keep up with modern development practices.
+                    </p>
+                </div>
+                
+                <!-- Bento Grid Skills Section -->
+                <div class="w-full">
+                    <div class="grid grid-cols-12 gap-3 md:gap-4">
+                        <!-- Frontend Section (Large) -->
+                        <div class="col-span-12 md:col-span-5 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800 transition-all duration-300 hover:border-[#14ae9650] hover:shadow-lg hover:shadow-[#14ae9633] group">
+                            <h4 class="text-white font-semibold mb-3 text-lg group-hover:text-[#14ae96] transition-colors duration-300">Frontend</h4>
+                            <div class="grid grid-cols-4 gap-2">
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/html.png" alt="HTML" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">HTML</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/css-3.png" alt="CSS" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">CSS</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/java-script.png" alt="JavaScript" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">JavaScript</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/typescript.png" alt="TypeScript" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">TypeScript</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/reactjs.png" alt="ReactJS" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">ReactJS</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/nextjs.webp" alt="NextJS" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">NextJS</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/tailwind.png" alt="Tailwind" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Tailwind</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/css-3.png" alt="SASS" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">SASS</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/library.png" alt="Shadcn" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Shadcn</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/reactjs.png" alt="Flutter/Dart" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Flutter/Dart</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Programming Languages (Medium) -->
+                        <div class="col-span-12 md:col-span-7 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800 transition-all duration-300 hover:border-[#14ae9650] hover:shadow-lg hover:shadow-[#14ae9633] group">
+                            <h4 class="text-white font-semibold mb-3 text-lg group-hover:text-[#14ae96] transition-colors duration-300">Programming Languages</h4>
+                            <div class="grid grid-cols-6 gap-2">
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/java-script.png" alt="JavaScript" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">JavaScript</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/typescript.png" alt="TypeScript" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">TypeScript</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/python.png" alt="Python" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Python</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/c-.png" alt="C" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">C</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/c-(1).png" alt="C++" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">C++</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/reactjs.png" alt="Dart" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Dart</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/gnu-bash.png" alt="Bash" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Bash</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Backend Section (Medium) -->
+                        <div class="col-span-12 sm:col-span-6 md:col-span-6 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800 transition-all duration-300 hover:border-[#14ae9650] hover:shadow-lg hover:shadow-[#14ae9633] group">
+                            <h4 class="text-white font-semibold mb-3 text-lg group-hover:text-[#14ae96] transition-colors duration-300">Backend</h4>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/nodejs.png" alt="NodeJS" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">NodeJS</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/express.png" alt="Express.js" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Express.js</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/library.png" alt="GraphQL" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">GraphQL</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/python.png" alt="Python" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Databases (Small) -->
+                        <div class="col-span-12 sm:col-span-6 md:col-span-6 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800 transition-all duration-300 hover:border-[#14ae9650] hover:shadow-lg hover:shadow-[#14ae9633] group">
+                            <h4 class="text-white font-semibold mb-3 text-lg group-hover:text-[#14ae96] transition-colors duration-300">Databases</h4>
+                            <div class="grid grid-cols-6 gap-2">
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/mongodb.png" alt="MongoDB" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">MongoDB</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/database.png" alt="MySQL" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">MySQL</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/database.png" alt="PostgreSQL" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">PostgreSQL</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-3">
+                                    <img src="./assets/tools-icon/database.png" alt="SQL" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">SQL</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-3">
+                                    <img src="./assets/tools-icon/firebase.png" alt="Firebase" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- DevOps (Small) -->
+                        <div class="col-span-12 sm:col-span-6 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800 transition-all duration-300 hover:border-[#14ae9650] hover:shadow-lg hover:shadow-[#14ae9633] group">
+                            <h4 class="text-white font-semibold mb-3 text-lg group-hover:text-[#14ae96] transition-colors duration-300">DevOps</h4>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/docker.png" alt="Docker" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Docker</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/git.png" alt="Git" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Git</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/github.png" alt="GitHub" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">GitHub</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/ci-cd.png" alt="CI/CD" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">CI/CD</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/linux.png" alt="Linux" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Linux</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/social.png" alt="Heroku" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Heroku</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Security Tools (Small) -->
+                        <div class="col-span-12 sm:col-span-6 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800 transition-all duration-300 hover:border-[#14ae9650] hover:shadow-lg hover:shadow-[#14ae9633] group">
+                            <h4 class="text-white font-semibold mb-3 text-lg group-hover:text-[#14ae96] transition-colors duration-300">Security Tools</h4>
+                            <div class="grid grid-cols-3 grid-rows-2 gap-2">
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group col-span-2">
+                                    <img src="./assets/tools-icon/burpsuite.png" alt="Burp Suite" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Burp Suite</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/visual-studio.png" alt="Wireshark" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Wireshark</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/visual-studio.png" alt="Ghidra" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Ghidra</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/powershell.png" alt="PowerShell" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">PowerShell</span>
+                                </div>
+                                <div class="skill-chip bg-zinc-900 rounded-lg px-3 py-2 border border-zinc-800 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-[#14ae9650] hover:shadow-sm hover:shadow-[#14ae9633] group">
+                                    <img src="./assets/tools-icon/gnu-bash.png" alt="Bash" class="w-5 h-5 mr-2" />
+                                    <span class="text-white text-sm font-medium group-hover:text-[#14ae96] transition-colors duration-300">Bash</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="experience" class="bg-black py-16">
-            <div class="container mx-auto px-4 text-white flex flex-col items-center">
-                <h2 class="text-3xl font-bold mb-8 text-[#14ae96] text-center">Experience</h2>
-                <div class="w-full max-w-2xl flex flex-col gap-6">
-                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 shadow-lg transition-transform duration-200 hover:scale-[1.03]">
-                        <h3 class="text-xl font-semibold text-[#14ae96]">Frontend Developer (Freelance)</h3>
-                        <p class="text-zinc-300 text-sm mb-2">2022 - Present</p>
-                        <p class="text-white">Worked with multiple clients to build responsive web applications using React, Next.js, and Tailwind CSS. Focused on performance, accessibility, and modern UI/UX.</p>
+        <div id="experience" class="bg-gradient-to-b from-black to-[#0a1a1a] py-16">
+            <div class="container mx-auto px-4 md:px-16 xl:px-32 max-w-7xl text-white flex flex-col items-center">
+                <h2 class="text-3xl font-bold mb-8 text-[#14ae96] text-center relative">
+                    Experience
+                    <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-20 bg-[#14ae96] rounded-full"></span>
+                </h2>
+                <p class="text-zinc-400 mb-12 text-center max-w-2xl">
+                    My professional journey and experience in the tech industry. 
+                    I'm constantly seeking new opportunities to grow and expand my skills.
+                </p>
+                
+                <!-- Timeline Container -->
+                <div class="w-full max-w-3xl flex flex-col gap-8">
+                    <div class="experience-item bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col gap-2 transform transition-all duration-300 hover:border-[#14ae9650] hover:shadow-lg hover:shadow-[#14ae9633] hover:-translate-y-1">
+                        <span class="text-lg font-bold text-[#14ae96]">Frontend Developer Intern</span>
+                        <span class="text-zinc-400 text-sm">Tech Company • June 2023 - Present</span>
+                        <p class="text-white text-sm">Worked on building and maintaining modern web applications using React.js and Next.js. Collaborated with designers and backend developers to deliver seamless user experiences.</p>
+                        <div class="w-0 h-1 bg-gradient-to-r from-[#14ae96] to-[#14ae9650] mt-2 group-hover:w-full transition-all duration-500"></div>
                     </div>
-                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 shadow-lg transition-transform duration-200 hover:scale-[1.03]">
-                        <h3 class="text-xl font-semibold text-[#14ae96]">CTF Player & Cybersecurity Enthusiast</h3>
-                        <p class="text-zinc-300 text-sm mb-2">2021 - Present</p>
-                        <p class="text-white">Participated in national and international Capture The Flag competitions, specializing in web security and cryptography challenges.</p>
+                    <div class="experience-item bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col gap-2 transform transition-all duration-300 hover:border-[#14ae9650] hover:shadow-lg hover:shadow-[#14ae9633] hover:-translate-y-1">
+                        <span class="text-lg font-bold text-[#14ae96]">Freelance Web Developer</span>
+                        <span class="text-zinc-400 text-sm">Remote • Jan 2022 - May 2023</span>
+                        <p class="text-white text-sm">Developed custom websites and web apps for clients, focusing on responsive design, performance, and accessibility.</p>
+                        <div class="w-0 h-1 bg-gradient-to-r from-[#14ae96] to-[#14ae9650] mt-2 group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                    <div class="experience-item bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col gap-2 transform transition-all duration-300 hover:border-[#14ae9650] hover:shadow-lg hover:shadow-[#14ae9633] hover:-translate-y-1">
+                        <span class="text-lg font-bold text-[#14ae96]">MCA Student Researcher</span>
+                        <span class="text-zinc-400 text-sm">The ICFAI University • 2020 - Present</span>
+                        <p class="text-white text-sm">Conducting research on web technologies and contributing to open source projects as part of my Master of Computer Applications studies.</p>
+                        <div class="w-0 h-1 bg-gradient-to-r from-[#14ae96] to-[#14ae9650] mt-2 group-hover:w-full transition-all duration-500"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="services" class="bg-black py-16">
-            <div class="container mx-auto px-4 text-white flex flex-col items-center">
+        <div id="services" class="bg-gradient-to-b from-[#0a1a1a] to-black py-16">
+            <div class="container mx-auto px-4 md:px-16 xl:px-32 max-w-7xl text-white flex flex-col items-center">
                 <h2 class="text-3xl font-bold mb-8 text-[#14ae96] text-center">Services</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-5xl">
-                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 flex flex-col items-center shadow-lg transition-transform duration-200 hover:scale-[1.03]">
-                        <i class="ri-code-s-slash-line text-4xl text-[#14ae96] mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Web Development</h3>
-                        <p class="text-zinc-300 text-center">Modern, responsive websites and web apps using React, Next.js, and Tailwind CSS.</p>
+                    <div class="service-card border border-zinc-800 rounded-xl p-6 bg-black flex flex-col gap-3 shadow-lg hover:border-[#14ae9650] hover:shadow-[#14ae9633] transition-all duration-500 transform hover:-translate-y-1 group relative overflow-hidden">
+                        <div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#14ae96] to-transparent group-hover:w-full transition-all duration-500"></div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <img src="./assets/tools-icon/reactjs.png" class="h-8 w-8 aspect-auto transform transition-all duration-300 group-hover:scale-110" alt="React.js">
+                            <span class="text-lg font-semibold text-white group-hover:text-[#14ae96] transition-colors duration-300">Web Development</span>
+                        </div>
+                        <p class="text-zinc-300 group-hover:text-white transition-colors duration-300">Modern, responsive websites and web apps using React, Next.js, and Tailwind CSS.</p>
                     </div>
-                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 flex flex-col items-center shadow-lg transition-transform duration-200 hover:scale-[1.03]">
-                        <i class="ri-shield-keyhole-line text-4xl text-[#14ae96] mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Cybersecurity Consulting</h3>
-                        <p class="text-zinc-300 text-center">Security audits, vulnerability assessments, and CTF-style training for teams and individuals.</p>
+                    <div class="service-card border border-zinc-800 rounded-xl p-6 bg-black flex flex-col gap-3 shadow-lg hover:border-[#14ae9650] hover:shadow-[#14ae9633] transition-all duration-500 transform hover:-translate-y-1 group relative overflow-hidden">
+                        <div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#14ae96] to-transparent group-hover:w-full transition-all duration-500"></div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <img src="./assets/tools-icon/burpsuite.png" class="h-8 w-8 aspect-auto transform transition-all duration-300 group-hover:scale-110" alt="Security">
+                            <span class="text-lg font-semibold text-white group-hover:text-[#14ae96] transition-colors duration-300">Cybersecurity Consulting</span>
+                        </div>
+                        <p class="text-zinc-300 group-hover:text-white transition-colors duration-300">Security audits, vulnerability assessments, and CTF-style training for teams and individuals.</p>
                     </div>
-                    <div class="bg-white/10 rounded-xl p-6 border border-zinc-800 flex flex-col items-center shadow-lg transition-transform duration-200 hover:scale-[1.03]">
-                        <i class="ri-lightbulb-flash-line text-4xl text-[#14ae96] mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Tech Mentoring</h3>
-                        <p class="text-zinc-300 text-center">Guidance for students and beginners in web development, programming, and cybersecurity.</p>
+                    <div class="service-card border border-zinc-800 rounded-xl p-6 bg-black flex flex-col gap-3 shadow-lg hover:border-[#14ae9650] hover:shadow-[#14ae9633] transition-all duration-500 transform hover:-translate-y-1 group relative overflow-hidden">
+                        <div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#14ae96] to-transparent group-hover:w-full transition-all duration-500"></div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <img src="./assets/tools-icon/nodejs.png" class="h-8 w-8 aspect-auto transform transition-all duration-300 group-hover:scale-110" alt="Mentoring">
+                            <span class="text-lg font-semibold text-white group-hover:text-[#14ae96] transition-colors duration-300">Tech Mentoring</span>
+                        </div>
+                        <p class="text-zinc-300 group-hover:text-white transition-colors duration-300">Guidance for students and beginners in web development, programming, and cybersecurity.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div id="contact" class="bg-black py-16">
-            <div class="container mx-auto px-4 text-white flex flex-col items-center">
+            <div class="container mx-auto px-4 md:px-16 xl:px-32 max-w-3xl text-white flex flex-col items-center">
                 <h2 class="text-3xl font-bold mb-8 text-[#14ae96] text-center">Contact</h2>
-                <form class="w-full max-w-lg bg-white/10 rounded-xl p-8 border border-zinc-800 flex flex-col gap-4 shadow-lg" action="mailto:dipannama91@gmail.com" method="POST" enctype="text/plain">
-                    <input type="text" name="name" placeholder="Your Name" required class="rounded p-3 bg-black/60 border border-zinc-700 text-white focus:outline-none focus:border-[#14ae96] placeholder:text-zinc-400" />
-                    <input type="email" name="email" placeholder="Your Email" required class="rounded p-3 bg-black/60 border border-zinc-700 text-white focus:outline-none focus:border-[#14ae96] placeholder:text-zinc-400" />
-                    <textarea name="message" placeholder="Your Message" required rows="4" class="rounded p-3 bg-black/60 border border-zinc-700 text-white focus:outline-none focus:border-[#14ae96] placeholder:text-zinc-400"></textarea>
-                    <button type="submit" class="bg-[#14ae96] text-black font-bold py-3 rounded hover:bg-[#0e8c76] transition">Send Message</button>
+                <form class="w-full max-w-2xl bg-zinc-900 border border-zinc-800 rounded-2xl p-10 flex flex-col gap-6 shadow-lg transform transition-all duration-500 hover:shadow-[#14ae9633]">
+                    <div class="flex flex-col gap-2 relative group">
+                        <label for="name" class="text-white font-semibold group-hover:text-[#14ae96] transition-colors duration-300">Name</label>
+                        <input type="text" id="name" name="name" class="p-4 rounded-lg bg-black border border-zinc-700 text-white focus:border-[#14ae96] focus:shadow-[#14ae9633] focus:shadow-sm outline-none transition-all duration-300" required>
+                        <div class="absolute bottom-0 left-0 h-0.5 w-0 bg-[#14ae96] group-hover:w-full transition-all duration-500 opacity-0 group-hover:opacity-100 -mb-1"></div>
+                    </div>
+                    <div class="flex flex-col gap-2 relative group">
+                        <label for="email" class="text-white font-semibold group-hover:text-[#14ae96] transition-colors duration-300">Email</label>
+                        <input type="email" id="email" name="email" class="p-4 rounded-lg bg-black border border-zinc-700 text-white focus:border-[#14ae96] focus:shadow-[#14ae9633] focus:shadow-sm outline-none transition-all duration-300" required>
+                        <div class="absolute bottom-0 left-0 h-0.5 w-0 bg-[#14ae96] group-hover:w-full transition-all duration-500 opacity-0 group-hover:opacity-100 -mb-1"></div>
+                    </div>
+                    <div class="flex flex-col gap-2 relative group">
+                        <label for="message" class="text-white font-semibold group-hover:text-[#14ae96] transition-colors duration-300">Message</label>
+                        <textarea id="message" name="message" rows="6" class="p-4 rounded-lg bg-black border border-zinc-700 text-white focus:border-[#14ae96] focus:shadow-[#14ae9633] focus:shadow-sm outline-none resize-none transition-all duration-300" required></textarea>
+                        <div class="absolute bottom-0 left-0 h-0.5 w-0 bg-[#14ae96] group-hover:w-full transition-all duration-500 opacity-0 group-hover:opacity-100 -mb-1"></div>
+                    </div>
+                    <button type="submit" class="relative bg-black text-white font-bold py-4 rounded-lg hover:text-black transition-colors duration-300 text-lg border border-[#14ae96] overflow-hidden group">
+                        <span class="relative z-10">Send Message</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-[#14ae96] to-[#14ae96cc] w-0 h-full transition-all duration-300 group-hover:w-full"></div>
+                    </button>
                 </form>
                 <div class="flex flex-wrap gap-6 mt-8 text-3xl justify-center">
-                    <a href="https://www.github.com/DipanNama" target="_blank" class="hover:text-[#14ae96]" aria-label="GitHub"><i class="ri-github-fill"></i></a>
-                    <a href="https://www.linkedin.com/in/dipannama" target="_blank" class="hover:text-[#14ae96]" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
-                    <a href="https://www.x.com/dipannama91" target="_blank" class="hover:text-[#14ae96]" aria-label="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
-                    <a href="mailto:dipannama91@gmail.com" class="hover:text-[#14ae96]" aria-label="Email"><i class="ri-mail-line"></i></a>
+                    <a href="https://www.github.com/DipanNama" target="_blank" class="social-icon hover:text-[#14ae96]" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+                    <a href="https://www.linkedin.com/in/dipannama" target="_blank" class="social-icon hover:text-[#14ae96]" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://www.x.com/dipannama91" target="_blank" class="social-icon hover:text-[#14ae96]" aria-label="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
+                    <a href="mailto:dipannama91@gmail.com" class="social-icon hover:text-[#14ae96]" aria-label="Email"><i class="ri-mail-line"></i></a>
                 </div>
             </div>
         </div>
+        
+        <!-- Footer with Copyright -->
+        <footer class="bg-black py-6 border-t border-zinc-800">
+            <div class="container mx-auto px-4 flex flex-col items-center">
+                <div class="footer-copyright text-white opacity-70 text-center">
+                    <p>&copy; <span id="current-year"></span> Dipan Nama. All Rights Reserved.</p>
+                    <script>document.getElementById("current-year").textContent = new Date().getFullYear();</script>
+                </div>
+            </div>
+        </footer>
 
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle" aria-label="Toggle Theme" class="fixed bottom-6 right-6 z-50 text-2xl rounded-full p-3 border border-zinc-700 bg-black/30 text-[#14ae96] hover:bg-[#14ae96] hover:text-black transition duration-300 focus:outline-none shadow-lg backdrop-blur-md">
-            <i id="theme-toggle-icon" class="ri-moon-line"></i>
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top" class="fixed bottom-6 right-6 bg-zinc-900 text-white h-12 w-12 rounded-full flex items-center justify-center border border-zinc-800 shadow-lg transition-all duration-300 hover:bg-[#14ae96] opacity-0 z-50">
+            <i class="ri-arrow-up-line text-xl"></i>
         </button>
     </main>
-    <script src="./js/script.js"></script>
+    <!-- GSAP Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+    
+    <!-- Core Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
     <script src="https://cdn.jsdelivr.net/npm/isomorphic-lolcat"></script>
     <script src="https://cdn.jsdelivr.net/npm/figlet/lib/figlet.js"></script>
@@ -526,7 +721,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/xml_formatting.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.x.x/css/jquery.terminal.min.css" /> -->
+    <script src="./js/script.js"></script>
     <script src="./js/terminal.js"></script>
+    <script src="./js/animation.js"></script>
 </body>
 
 </html>
