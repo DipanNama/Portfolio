@@ -299,3 +299,231 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Contact Form Functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const submitText = document.querySelector('.submit-text');
+  const formSuccess = document.getElementById('form-success');
+  const formError = document.getElementById('form-error');
+  
+  if (!contactForm) return; // Exit if contact form doesn't exist
+  
+  // Form validation patterns
+  const patterns = {
+    name: /^[a-zA-Z\s]{2,50}$/,
+    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    subject: /^.{3,100}$/,
+    message: /^.{10,1000}$/
+  };
+
+  // Validation messages
+  const messages = {
+    name: 'Name must be 2-50 characters and contain only letters and spaces',
+    email: 'Please enter a valid email address',
+    subject: 'Subject must be 3-100 characters long',
+    message: 'Message must be 10-1000 characters long'
+  };
+
+  // Real-time validation function
+  function validateField(field) {
+    const value = field.value.trim();
+    const fieldName = field.name;
+    const errorElement = field.parentElement.parentElement.querySelector('.form-error-message');
+    const isValid = patterns[fieldName].test(value);
+    
+    if (value === '') {
+      // Field is empty
+      field.classList.remove('border-red-500', 'border-green-500');
+      field.classList.add('border-zinc-700');
+      errorElement.classList.add('hidden');
+      return false;
+    } else if (isValid) {
+      // Field is valid
+      field.classList.remove('border-red-500', 'border-zinc-700');
+      field.classList.add('border-green-500');
+      errorElement.classList.add('hidden');
+      return true;
+    } else {
+      // Field is invalid
+      field.classList.remove('border-green-500', 'border-zinc-700');
+      field.classList.add('border-red-500');
+      errorElement.textContent = messages[fieldName];
+      errorElement.classList.remove('hidden');
+      return false;
+    }
+  }
+
+  // Add real-time validation to form fields
+  const formFields = contactForm.querySelectorAll('input, textarea');
+  formFields.forEach(field => {
+    field.addEventListener('blur', () => validateField(field));
+    field.addEventListener('input', () => {
+      // Only validate if field has been touched (blurred)
+      if (field.classList.contains('border-red-500') || field.classList.contains('border-green-500')) {
+        validateField(field);
+      }
+    });
+  });
+
+  // Form submission handler
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Hide any previous messages
+    formSuccess.classList.add('hidden');
+    formError.classList.add('hidden');
+    
+    // Validate all fields
+    let isFormValid = true;
+    formFields.forEach(field => {
+      const isFieldValid = validateField(field);
+      if (!isFieldValid) {
+        isFormValid = false;
+      }
+    });
+    
+    if (!isFormValid) {
+      // Scroll to first error
+      const firstError = contactForm.querySelector('.border-red-500');
+      if (firstError) {
+        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstError.focus();
+      }
+      return;
+    }
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+    submitText.textContent = 'Sending...';
+    
+    // Add loading spinner
+    const spinner = document.createElement('div');
+    spinner.className = 'w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin';
+    submitBtn.querySelector('span').appendChild(spinner);
+    
+    try {
+      // Collect form data
+      const formData = new FormData(contactForm);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        timestamp: new Date().toISOString()
+      };
+      
+      // Simulate API call (replace with actual endpoint)
+      await simulateFormSubmission(data);
+      
+      // Show success message
+      formSuccess.classList.remove('hidden');
+      contactForm.reset();
+      
+      // Reset field styles
+      formFields.forEach(field => {
+        field.classList.remove('border-red-500', 'border-green-500');
+        field.classList.add('border-zinc-700');
+      });
+      
+      // Scroll to success message
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        formSuccess.classList.add('hidden');
+      }, 5000);
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      formError.classList.remove('hidden');
+      formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Hide error message after 5 seconds
+      setTimeout(() => {
+        formError.classList.add('hidden');
+      }, 5000);
+    } finally {
+      // Reset button state
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+      submitText.textContent = 'Send Message';
+      
+      // Remove spinner
+      const spinnerElement = submitBtn.querySelector('.animate-spin');
+      if (spinnerElement) {
+        spinnerElement.remove();
+      }
+    }
+  });
+  
+  // Simulate form submission (replace with actual API call)
+  async function simulateFormSubmission(data) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // Simulate 90% success rate
+        if (Math.random() > 0.1) {
+          console.log('Form submitted:', data);
+          resolve(data);
+        } else {
+          reject(new Error('Simulated network error'));
+        }
+      }, 2000); // 2 second delay to simulate network request
+    });
+  }
+  
+  // Character counter for message field
+  const messageField = document.getElementById('message');
+  if (messageField) {
+    const charCounter = document.createElement('div');
+    charCounter.className = 'text-zinc-500 text-xs mt-1 text-right';
+    messageField.parentElement.appendChild(charCounter);
+    
+    function updateCharCounter() {
+      const current = messageField.value.length;
+      const max = 1000;
+      const min = 10;
+      
+      charCounter.textContent = `${current}/${max} characters`;
+      
+      if (current < min) {
+        charCounter.className = 'text-zinc-500 text-xs mt-1 text-right';
+      } else if (current > max * 0.9) {
+        charCounter.className = 'text-yellow-400 text-xs mt-1 text-right';
+      } else {
+        charCounter.className = 'text-green-400 text-xs mt-1 text-right';
+      }
+    }
+    
+    messageField.addEventListener('input', updateCharCounter);
+    updateCharCounter(); // Initialize counter
+  }
+});
+
+// Scroll to top functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+  
+  if (scrollToTopBtn) {
+    // Show/hide scroll to top button
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+        scrollToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        scrollToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+        scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
+    
+    // Scroll to top when clicked
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
