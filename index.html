@@ -14,6 +14,60 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" />
     <script src="./js/lib/typed.min.js"></script>
+    <style>
+/* Sweep animation effect */
+.terminal-header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #1f2937, #0d1117);
+  border-bottom: 1px solid #1f2937;
+}
+
+/* Create the sweeping highlight */
+.terminal-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: sweep 3s infinite;
+}
+
+/* Smooth sweeping animation */
+@keyframes sweep {
+  0% {
+    left: -75%;
+  }
+  50% {
+    left: 125%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+/* Optional – make the terminal dots glow a bit */
+.terminal-dot.red {
+  background: #ff5f56;
+  box-shadow: 0 0 4px #ff5f56;
+}
+.terminal-dot.yellow {
+  background: #ffbd2e;
+  box-shadow: 0 0 4px #ffbd2e;
+}
+.terminal-dot.green {
+  background: #27c93f;
+  box-shadow: 0 0 4px #27c93f;
+}
+</style>
+
 </head>
 
 <body class="bg-black">
